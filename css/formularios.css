@@ -1,0 +1,105 @@
+.form{   
+    margin: 10px auto; 
+    padding: 20px auto;
+    width: 600px;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=number] {
+    padding: 8px 10px;
+    margin-bottom: 25px;
+    color: #ccc;
+    background-color: transparent;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+input[type=text]:hover, input[type=password]:hover, input[type=email]:hover, input[type=number]:hover  {
+    background-color: whitesmoke;
+    color: #000;
+}
+
+.Txt100{
+    width: 100px;
+}
+
+.TxtAll{
+    width: 100%;
+}
+
+.TxtNumb{
+    text-align: right;
+}
+
+#Chk_Recordar{
+    margin: 10px 20px;
+}
+
+label{
+    color: white;
+    font-weight: 200;
+    font-size: 15px;
+}
+  
+button {
+    display: block;
+    border-radius: 3px;
+    background-color: #97979773;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px 0;
+    border: none;
+    cursor: pointer;
+    width: 130px;
+}
+  
+button:hover {
+    background: rgb(2, 2, 2);
+    color: white;
+    /* opacity: 0.6; */
+}
+  
+.cancelbtn {
+    display: none;
+    border-radius: 48%;
+    border: 2px solid white;
+    width: auto;
+    height: auto;
+    padding: 4px 7px;
+    margin: 6px 26px;
+    background-color: rgba(0, 167, 185, 0.664);
+    font-size: 30px;
+    float: right;    
+}
+
+#backbtn{
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+    button{        
+        width: 150px;
+    }
+    .cancelbtn{
+        display: block;
+    }
+    .form{
+        width: auto;        
+    }
+}
+  
+@media screen and (max-width: 500px) {
+    .form{
+        margin: 0;
+        padding: 0;
+        width: 100%;        
+    }
+    button{
+        width: 100%;
+    }
+    .cancelbtn{
+        width: auto;
+    }
+}

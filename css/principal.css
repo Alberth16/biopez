@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Arial','Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(30, 30, 30);
+}
+
+h1,h2,h3{
+    margin: 5px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-weight: 100;
+}
+.cuerpo{
+    margin: auto;
+    width: 1100px;
+}
+
+.recuadro {
+    background-color: rgba(95, 95, 95, 0.198);
+    display: block;    
+    margin: 20px auto;
+    /* border: 2px solid yellow; */
+    width: 400px;
+}
+  
+.container_login{
+    text-align: center;
+    font-size: 12px;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    width: 30%;
+    border-radius: 50%;
+}
+
+.avatar_h{
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-right: 10px;
+    width: 50px;
+    float: left;
+}
+  
+.container {
+    padding: 16px;
+    /* border:1px solid yellow; */
+}
+
+.transp80{
+    background: #f1f1f11c;
+}
+
+.containerh{
+    top: -30%;
+    padding: 2px;
+    position: relative;
+}
+  
+header{
+    padding: 1px;
+    margin: 0;
+    background-color:rgba(1, 130, 144, 0.554);
+    color: white;        
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.hora{
+    display: inline-block;
+    color: rgb(245, 115, 115);
+}
+
+.fecha{
+display: inline-block;
+color: white;
+}
+
+
+@media screen and (max-width:1100px){
+    .cuerpo{
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .cuerpo{
+        width: auto;
+    }
+    .container{
+        text-align: center;
+    }
+}
+  
+@media screen and (max-width: 500px) {
+    .cuerpo{
+        width: 100%;
+    }
+    .recuadro{
+        width: 100%;
+        margin: 0;
+    }    
+    span.psw {
+      display: block;
+      float: none;
+    }
+    img.avatar {
+        width: 36%;
+    }
+}
