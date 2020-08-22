@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siembra</title>
+    <title>Compras</title>
     <?php include "../incl/links.php"?>
 </head>
 <body class="cuerpo">
@@ -11,69 +11,83 @@
     
     <div class="container">
         <div class="msgbox"></div>
-        <h3>Siembra</h3>
+        <h3>Compras</h3>
         <div class="form">
         
             <div class="txts">
-                <label for="">Fecha de Siembra:</label>
+                <label for="">Factura:</label>
                 <input 
                     type="text"
-                    class="Txt100"
-                    id="datepicker"
+                    class=""
+                    id="Compra_Factura"
+                    placeholder="NO. factura"
                     required
-                />	
+                />#
             </div>
 
             <div class="txts">
-                <label for="">No. Estanque:</label>                
+                <label for="">Fecha:</label>                
                 <input 
                     type="text" 
                     class="Txt100" 
-                    id="txt_Estanque" 
-                    placeholder="Estanque" 
-                    name="txt_Estanque" 
+                    id="Compra_Compras" 
+                    placeholder="Compra"
                     required                     
-                />
+                />de Compra
             </div>
 
             <div class="txts">
-                <label for="">Capacidad Agua:</label>
+                <label for="">Fecha:</label>
                 <input 
                     type="text" 
                     class="Txt100 TxtNumb"
-                    id="txt_LitrosAgua"
-                    placeholder="Litros" 
-                    name="txt_LitrosAgua" 
-                    onkeypress="return esNumero(event, this.id);"
+                    id="Compra_Vencimiento"
+                    placeholder="Vence"
                     required 
-                />litros
+                />Vencimiento
             </div>
-
+            
             <div class="txts">
-                <label for="">Cantidad Siembra:</label>
+                <label for="">Producto:</label>
                 <input 
                     type="text" 
                     class="Txt100 TxtNumb"
-                    id="txt_cantidadSiembra"
+                    id="txt_Compra_Producto"
+                    placeholder="Producto"                     
+                    required 
+                />Descripción
+
+            </div>
+
+            <div class="txts">
+                <label for="">Cantidad:</label>
+                <input 
+                    type="text" 
+                    class="Txt100 TxtNumb"
+                    id="txt_Compra_cantidad"
                     placeholder="Cantidad" 
-                    name="txt_QtySiembra" 
                     onkeypress="return esNumero(event, this.id);"
                     required 
-                />unidades
+                />
+                <select id="Compra_Unidad" class="select_">
+                    <option value="1">Lbs</option>
+                    <option value="2">gms</option>
+                    <option value="3">Kgs</option>
+                    <option value="4">Eas</option>
+                </select>
 
             </div>
 
             <div class="txts">
-                <label for="">Tamaño Inicial Siembra:</label>
+                <label for="">Precio:</label>
                 <input 
                     type="text" 
                     class="Txt100 TxtNumb"
-                    id="txt_TallaInicial"
-                    placeholder="Tamaño" 
-                    name="TallaInicial" 
+                    id="txt_Compra_Precio"
+                    placeholder="Precio" 
                     onkeypress="return esNumero(event, this.id);"
                     required
-                /> gm
+                /> Lps.
             </div>
 
             <button class="btnGuardar"><i class="far fa-save"></i> Guardar</button>
@@ -96,7 +110,11 @@
         
         $(function() {
 			$.datepicker.setDefaults($.datepicker.regional["es"]);
-			$("#datepicker").datepicker({
+			$("#Compra_Compras").datepicker({
+				dateFormat: 'dd-M-yy'				
+            }).datepicker("setDate", new Date());
+
+            $("#Compra_Vencimiento").datepicker({
 				dateFormat: 'dd-M-yy'				
 			}).datepicker("setDate", new Date());
         });

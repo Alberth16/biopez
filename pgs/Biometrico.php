@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de datos </title>
+    <title>Biometrico</title>
     <?php include "../incl/links.php"?>
 </head>
 <body class="cuerpo">
@@ -12,21 +12,62 @@
     <div class="container">
         <h3>Biometrico</h3>
         <div class="form">
-            <label for=""><b>No. Muestra</b></label>
-            <input type="text" class="Txt100" max="100" min="1"  name="pMuestra" required id="txt_Muestra" disabled value="10" 
-            style=
-            "text-align: center;
-            font-weight:600;"
-            >
+        
+            <div class="txts">
+                <label for=""><b>No. Muestra:</b></label>
+                <input 
+                    type="text" 
+                    class="Txt100"
+                    id="txt_Muestra" 
+                    max="100" 
+                    min="1"  
+                    name="pMuestra" 
+                    required                    
+                    disabled
+                />
+            </div>
 
-            <label for="pMuestra"><b>% Muestra</b></label>
-            <input type="number" class="Txt100" max="100" min="1" placeholder="% MUestra" name="pMuestra" required id="txt_Muestra" value="5">
+            <div class="txts">
+                <label for="pMuestra"><b>% Muestra:</b></label>
+                <input 
+                    type="number" 
+                    class="Txt100" 
+                    id="txt_Muestra" 
+                    max="100" 
+                    min="1" 
+                    placeholder="%" 
+                    name="pMuestra" 
+                    onkeypress="return esNumero(event, this.id);"
+                    required
+                    value="5"
+                />%
+            </div>
             
-            <label for="Peso"><b>Peso Libras:</b></label>
-            <input type="text" class="TxtNumb" placeholder="Peso del pez" name="Peso" required id="txt_Peso">
+            <div class="txts">
+                <label for="Peso"><b>Peso:</b></label>
+                <input 
+                    type="text" 
+                    class="Txt100 TxtNumb"
+                    id="txt_Peso"
+                    placeholder="Peso del pez" 
+                    name="Peso" 
+                    onkeypress="return esNumero(event, this.id);"
+                    required
+                />gm
+            </div>
 
-            <label for="Tamaño"><b>Tamaño Centimetros:</b></label>
-            <input type="text" class="TxtNumb" placeholder="Tamaño del pez" name="Tamaño" required id="txt_Tamañoepez">
+            <div class="txts">
+                <label for="Tamaño"><b>Tamaño:</b></label>
+                <input 
+                    type="text" 
+                    class="Txt100 TxtNumb"
+                    id="txt_Tamañoepez" 
+                    placeholder="Largo del pez" 
+                    name="Tamaño" 
+                    onkeypress="return esNumero(event, this.id);"
+                    required
+                />cm
+            </div>
 
             <button class="btnGuardar"><i class="far fa-save"></i> Guardar</button>
         </div>

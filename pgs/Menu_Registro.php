@@ -11,11 +11,11 @@
 
     <div class="container">
         <h3>Registro de datos</h3>
-        <button class="btnsiembra"><i class="fas fa-database"></i>    Siembra</button>    
-        <button class="btnlecturas"><i class="far fa-chart-bar"></i>  Lecturas</button>        
-        <button class="btnmonitoreo"><i class="fas fa-book"></i>    Monitoreo</button>        
-        <button class="btncompras"><i class="fas fa-database"></i>    Compras </button>
-        <button class="btnbiometrico"><i class="fas fa-database"></i>    Biometrico</button>
+        <button id="btnsiembra"><i class="fas fa-book"></i>    Siembra</button>    
+        <button id="btnconsumos"><i class="far fa-chart-bar"></i>  Consumos</button>        
+        <button id="btnmonitoreo"><i class="fas fa-book"></i>    Monitoreo</button>        
+        <button id="btncompras"><i class="far fa-money-bill-alt"></i>    Compras </button>
+        <button id="btnbiometrico"><i class="fas fa-database"></i>    Biometrico</button>
         
     </div>
     <div class="container transp80 footer">
@@ -30,13 +30,18 @@
         $(document).on('click', '.cancelbtn', function() {
             window.location='Menu.php';
         });
-        $(document).on('click', '.btnbiometrico', function() {
+        $(document).on('click', '#btnbiometrico', function() {
             window.location='Biometrico.php';
         });
-        $(document).on('click', '.btnsiembra', function() {
+        $(document).on('click', '#btnsiembra', function() {
             window.location='Siembra.php';
         });
-
+        $(document).on('click', '#btncompras', function() {
+            window.location='Compras.php';
+        });
+        $(document).on('click', '#btnmonitoreo', function() {
+            window.location='Monitoreo.php';
+        });
         
     </script>
 </body>
