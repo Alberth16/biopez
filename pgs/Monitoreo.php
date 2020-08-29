@@ -15,6 +15,15 @@
         <div class="form">
 
             <div class="txts">
+            <label for="">Numero de Tanque:</label>
+                <select class="select_" id="No_Tanque">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+
+            <div class="txts">
                 <label for="">Nivel de Oxigeno:</label>
                 <input 
                     type="text" 
@@ -23,7 +32,20 @@
                     placeholder="Oxigeno" 
                     onkeypress="return esNumero(event, this.id);"
                     required
-                /> Lps.
+                /> ppm
+                <div class="parametro"></div>
+            </div>
+
+            <div class="txts">
+                <label for="">Salinidad:</label>
+                <input 
+                    type="text" 
+                    class="Txt100 TxtNumb"
+                    id="txt_Salinidad"
+                    placeholder="Salinidad" 
+                    onkeypress="return esNumero(event, this.id);"
+                    required
+                /> ppt
             </div>
             
             <div class="txts">
@@ -35,11 +57,11 @@
                     placeholder="Temperatura" 
                     onkeypress="return esNumero(event, this.id);"
                     required
-                /> Lps.
+                /> C°
             </div>
             
             <div class="txts">
-                <label for="">pH:</label>
+                <label for="">Alcalinidad:</label>
                 <input 
                     type="text" 
                     class="Txt100 TxtNumb"
@@ -47,7 +69,7 @@
                     placeholder="pH" 
                     onkeypress="return esNumero(event, this.id);"
                     required
-                /> Lps.
+                />pH
             </div>
             
             <div class="txts">

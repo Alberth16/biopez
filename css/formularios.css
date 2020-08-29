@@ -3,16 +3,10 @@
     margin: 10px auto; 
     padding: 20px auto;
     width: 600px;
-    
+    box-shadow: grey 1px ipx;
 }
 
-div.txts{
-    display: block;
-    color: white;
-}
-
-
-
+.resultados,
 .select_,
 input[type=text], 
 input[type=password], 
@@ -20,10 +14,10 @@ input[type=email],
 input[type=number] {
     padding: 8px 10px;
     margin-bottom: 25px;
-    color: #ccc;
+    display: inline-block;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid rgb(51, 51, 51);
     box-sizing: border-box;
     font-size: 15px;
 }
@@ -33,10 +27,24 @@ input[type=text]:hover,
 input[type=password]:hover, 
 input[type=email]:hover, 
 input[type=number]:hover {
-    border: 1px solid whitesmoke;
+    border: 1px solid rgb(99, 99, 99);
     border-radius: 3px;
 }
 
+
+.resultados{
+    font-weight: 600;
+    color: rgb(0, 0, 134);
+}
+
+
+div.txts{
+    display: block;
+}
+
+div.txtInline{
+    display: inline-block;
+}
 
 
 .Txt100{
@@ -57,7 +65,7 @@ input[type=number]:hover {
 }
 
 label{
-    color: white;
+    margin: 0 20px 0 0 ;
     font-weight: 400;
     font-size: 15px;
 }
@@ -65,7 +73,7 @@ label{
 button {
     display: block;
     border-radius: 3px;
-    background-color: rgba(0, 176, 195, 0.6) ;
+    background-color: rgba(0, 37, 41, 0.897) ;
     /* #97979773 */
     color: white;
     padding: 10px 20px;
@@ -103,7 +111,7 @@ button:hover {
         width: 150px;
     }
     .cancelbtn{
-        display: block;
+        display: flex;
     }
     .form{
         width: auto;        
@@ -123,4 +131,5 @@ button:hover {
     .cancelbtn{
         width: auto;
     }
+
 }

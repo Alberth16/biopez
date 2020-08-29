@@ -11,13 +11,13 @@
 
     <div class="container">
         <h3>Registro de datos</h3>
-        <button id="btnsiembra"><i class="fas fa-book"></i>    Siembra</button>    
-        <button id="btnconsumos"><i class="far fa-chart-bar"></i>  Consumos</button>        
-        <button id="btnmonitoreo"><i class="fas fa-book"></i>    Monitoreo</button>        
         <button id="btncompras"><i class="far fa-money-bill-alt"></i>    Compras </button>
+        <button id="btnconsumos"><i class="far fa-chart-bar"></i>  Consumos</button>  
+        <button id="btnsiembra"><i class="fas fa-book"></i>    Siembra</button>
+        <button id="btnmonitoreo"><i class="fas fa-book"></i>    Monitoreo</button>
         <button id="btnbiometrico"><i class="fas fa-database"></i>    Biometrico</button>
-        
     </div>
+
     <div class="container transp80 footer">
         <?php include "../incl/footer.php"?>
     </div>    
@@ -41,6 +41,9 @@
         });
         $(document).on('click', '#btnmonitoreo', function() {
             window.location='Monitoreo.php';
+        });
+        $(document).on('click', '#btnconsumos', function() {
+            window.location='Consumos.php';
         });
         
     </script>
