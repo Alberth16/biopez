@@ -1,3 +1,7 @@
+<?php 
+    include "../incl/EstadoUser.php";
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,7 +11,6 @@
     <?php include "../incl/links.php"?>
 </head>
 <body class="cuerpo">
-    <?php include "../incl/header.php"?>
     
     <div class="container">
         <h3>Biometrico</h3>
@@ -72,9 +75,6 @@
             <button class="btnGuardar"><i class="far fa-save"></i> Guardar</button>
         </div>
     </div>
-    <div class="container transp80 footer">
-        <?php include "../incl/footer.php"?>
-    </div>    
 
     <script>
         window.onload=function(){

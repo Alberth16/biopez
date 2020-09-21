@@ -4,8 +4,8 @@
         <div class="imgcontainer">
             <img src="../img/usuario.png" alt="Avatar" class="avatar_h">
         </div>
-        <p id="user_name"><b>Nombre Usuario</b></p>
-        <p id="user_posicion">Posicion</p>
+        <p id="user_name"><b ><?php echo $_SESSION['Activo']['Nombre'];?></b></p>
+        <p id="user_posicion"><?php echo $_SESSION['Activo']['DescRols'];?></p>
         
     </div>
 </header>  

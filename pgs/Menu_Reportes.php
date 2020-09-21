@@ -11,8 +11,8 @@
     
     <div class="container">
         <h3>Reportes de Procesos</h3>
-        <button class="btnsiembra"><i class="fas fa-database"></i>    Curva de crecimiento</button>    
-        <button class="btnlecturas"><i class="far fa-chart-bar"></i>  Ventas</button>    
+        <button class="btnsiembra"><i class="fas fa-database"></i>    Curva de crecimiento</button>
+        <button class="btnlecturas"><i class="far fa-chart-bar"></i>  Ventas</button>
     </div>
 
     <div class="container transp80 footer">

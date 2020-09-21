@@ -1,9 +1,8 @@
 .form{
-    /* border: 1px solid yellow; */
     margin: 10px auto; 
     padding: 20px auto;
     width: 600px;
-    box-shadow: grey 1px ipx;
+    box-shadow: grey 1px 2px;
 }
 
 .resultados,
@@ -74,23 +73,21 @@ button {
     display: block;
     border-radius: 3px;
     background-color: rgba(0, 37, 41, 0.897) ;
-    /* #97979773 */
     color: white;
     padding: 10px 20px;
     margin: 5px 0;
     border: none;
     cursor: pointer;
-    width: 130px;
+    width: 100%;
 }
   
 button:hover {
     background: rgba(0, 87, 97, 0.6) ;
     color: white;
-    /* opacity: 0.6; */
 }
   
 .cancelbtn {
-    display: none;
+    /* display: none; */
     border-radius: 48%;
     border: 2px solid white;
     width: auto;
@@ -99,7 +96,7 @@ button:hover {
     margin: 6px 26px;
     background-color: rgba(0, 167, 185, 0.664);
     font-size: 30px;
-    float: right;    
+    float: right;
 }
 
 #backbtn{
@@ -107,14 +104,15 @@ button:hover {
 }
 
 @media screen and (max-width: 700px) {
-    button{        
+    nav,
+    button{
         width: 150px;
     }
     .cancelbtn{
         display: flex;
     }
     .form{
-        width: auto;        
+        width: auto;
     }
 }
   
@@ -122,8 +120,9 @@ button:hover {
     .form{
         margin: 0;
         padding: 0;
-        width: 100%;        
+        width: 100%;
     }
+    nav,
     button{
         width: 100%;
     }

@@ -7,7 +7,7 @@
     <?php include "../incl/links.php"?>
 </head>
 <body class="cuerpo">
-    <?php include "../incl/header.php"?>
+    
     
     <div class="container">
         <div class="msgbox"></div>
@@ -121,18 +121,14 @@
             </div>
 
 
-            <button class="btnGuardar"><i class="far fa-save"></i> Guardar</button>
+            <button class="btnGuardar Txt100"><i class="far fa-save"></i> Guardar</button>
         </div>
     </div>
-    .
-    <div class="container transp80 footer">
-        <?php include "../incl/footer.php"?>
-    </div>    
 
     <script>
         window.onload=function(){
             FechaActual();
-            HoraActual();            
+            HoraActual();
         }
 
         $(document).on('click', '.cancelbtn', function() {

@@ -7,7 +7,7 @@
     <?php include "../incl/links.php"?>
 </head>
 <body class="cuerpo">
-    <?php include "../incl/header.php"?>
+    
     
     <div class="container">
         <div class="msgbox"></div>
@@ -29,7 +29,7 @@
                                 placeholder="fecha Ant."
                                 disabled
                                 required
-                            />                
+                            />
                         </div>
                         <div class="txtInline">
                             <label for="">Lectura anterior:</label> 
@@ -39,11 +39,12 @@
                                 id="txt_Lectura_Ant"
                                 placeholder="Lectura Amt."
                                 onkeypress="return esNumero(event, this.id);"
-                                disabled
+                                disabled1
                                 required
+                                value="251412"
                             />
-                        </div>     
-                    </div>           
+                        </div>
+                    </div>
                     <div class="txts" id="Lec_Actual">
                         <label for="">Fecha actual:</label> 
                         <input 
@@ -52,8 +53,8 @@
                             id="txt_fecha_Act"
                             placeholder="fecha Act."
                             required
-                        />                     
-                        <label for="">Lectura actual:</label>                         
+                        />
+                        <label for="">Lectura actual:</label>
                         <input 
                             type="text" 
                             class="Txt100 TxtNumb"
@@ -61,21 +62,21 @@
                             placeholder="Lectura Act." 
                             onkeypress="return esNumero(event, this.id);"
                             required
-                        />    
-                    </div>     
-                    
-                    <div class="resultados">4525</div>Watts Consumidos
-                </div>                
+                        />
+                    </div>
+
+                    <div class="resultados" id="resElectricidad"></div>Watts Consumidos
+                </div>
             </div>
 
             <div class="txts Boton_Div">
-                <label for="">Consumo de Agua:</label>                
+                <label for="">Consumo de Agua:</label>
                 <input 
                     type="text" 
                     class="Txt100" 
                     id="Compra_Compras" 
-                    placeholder="Compra"
-                    required                     
+                    placeholder=""
+                    required
                 /> litros
             </div>
 
@@ -83,30 +84,37 @@
             <button class="btnGuardar"><i class="far fa-save"></i> Guardar</button>
         </div>
     </div>
-    .
-    <div class="container transp80 footer">
-        <?php include "../incl/footer.php"?>
-    </div>    
+
 
     <script>
         window.onload=function(){
             FechaActual();
-            HoraActual();            
+            HoraActual();
         }
 
         $(document).on('click', '.cancelbtn', function() {
             window.location='Menu_Registro.php';
         });
-        
+
         $(function() {
 			$.datepicker.setDefaults($.datepicker.regional["es"]);
 			$("#txt_fecha_Ant").datepicker({
-				dateFormat: 'dd-M-yy'				
+				dateFormat: 'dd-M-yy'
             }).datepicker("setDate", new Date());
 
             $("#txt_fecha_Act").datepicker({
-				dateFormat: 'dd-M-yy'				
+				dateFormat: 'dd-M-yy'
 			}).datepicker("setDate", new Date());
+        });
+
+        $(document).on('change', '#txt_Lectura_Ant', function() {
+            $('#resElectricidad').html(calculoElectricidad('txt_Lectura_Ant', 'txt_Lectura_Act'));
+            colorResultado();
+        });
+
+        $(document).on('change', '#txt_Lectura_Act', function() {
+            $('#resElectricidad').html(calculoElectricidad('txt_Lectura_Ant', 'txt_Lectura_Act'));
+            colorResultado();
         });
 
     </script>

@@ -1,3 +1,12 @@
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+
 function FechaActual (){
     var meses = new Array('','Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic');
     var f  = new Date();
@@ -50,3 +59,26 @@ function esNumero(evt, item){
         return (key <= 13 || (key >= 48 && key <= 57));
     }
  };
+
+ function calculoElectricidad(id1, id2){
+    var lectura1 = document.getElementById(id1).value;
+    var lectura2 = document.getElementById(id2).value;
+    var resultado = lectura2 - lectura1;
+
+    return resultado;
+ }
+
+ function colorResultado(){
+    var result = $('.resultados').html();
+    if(result == 0){  
+        $('.resultados').css('color','Black'); 
+    } else{
+        if(result < 0){  
+            $('.resultados').css('color','Red');
+        }else {
+            if(result > 0){  
+                $('.resultados').css('color','Blue')
+            }
+        }
+    }
+ }
