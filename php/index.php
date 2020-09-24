@@ -1,5 +1,6 @@
 <?php
-    session_start();
+    include "../incl/EstadoUser.php";
+    // session_start();
 	if(isset($_SESSION['activo'] )){		
 		switch($_SESSION['activo']['rol']){
             case  1:

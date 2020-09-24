@@ -1,5 +1,7 @@
 <?php
-    session_start();
+    include "../incl/EstadoUser.php";
+
+    // session_start();
     if(isset($_GET['funcion']) && !empty($_GET['funcion'])){
         $funcion = intval($_GET['funcion']); 
         if($funcion == 1){

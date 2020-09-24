@@ -1,9 +1,12 @@
 function myFunction() {
     var x = document.getElementById("myTopnav");
+    var frm = document.getElementById("Contenido");
     if (x.className === "topnav") {
       x.className += " responsive";
+      frm.scrolling = "true";
     } else {
       x.className = "topnav";
+      frm.scrolling = "no";
     }
   }
 
@@ -77,7 +80,7 @@ function esNumero(evt, item){
             $('.resultados').css('color','Red');
         }else {
             if(result > 0){  
-                $('.resultados').css('color','Blue')
+                $('.resultados').css('color','rgb(0, 95, 32)')
             }
         }
     }

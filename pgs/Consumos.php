@@ -1,3 +1,7 @@
+<?php 
+    include "../incl/EstadoUser.php";
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
