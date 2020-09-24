@@ -54,7 +54,7 @@
                 $resultado->execute();
                 $data = $resultado->fetch(PDO::FETCH_ASSOC);
 
-                echo $ids = $data['ID'];
+                $ids = $data['ID'];
 
                 if($data['Correo'] == $usuario && $data['Estado']==1){	
                     if ($data['Clave'] == $clave ) {
@@ -65,10 +65,9 @@
                                 mt_srand(time());
                                 $rand = mt_rand(1000000,9999999);
             
-                                $log = $CNN->prepare("INSERT INTO cookies (ID_user, Navegador, marca) VALUES (?, ?, ?)");
+                                $log = $CNN->prepare("INSERT INTO cookies (ID_user, marca) VALUES (?, ?)");
                                 $log->bindValue(1, $ids);
-                                $log->bindValue(2, $_SERVER['HTTP_USER_AGENT']);
-                                $log->bindValue(3, $rand);
+                                $log->bindValue(2, $rand);
                                 $log->execute();
             
                                 setcookie("REF", $ids, time()+(60*60*24*30));

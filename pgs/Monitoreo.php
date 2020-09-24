@@ -1,3 +1,7 @@
+<?php 
+    include "../incl/EstadoUser.php";
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -33,7 +37,11 @@
                     onkeypress="return esNumero(event, this.id);"
                     required
                 /> ppm
-                <div class="parametro"></div>
+                <div class="parametro">
+                    <div class="rango">
+
+                    </div>
+                </div>
             </div>
 
             <div class="txts">
@@ -121,7 +129,7 @@
             </div>
 
 
-            <button class="btnGuardar Txt100"><i class="far fa-save"></i> Guardar</button>
+            <button class="btnGuardar"><i class="far fa-save"></i> Guardar</button>
         </div>
     </div>
 

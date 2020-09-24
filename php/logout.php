@@ -1,6 +1,8 @@
 <?php
     try {
-        session_start();
+
+        include "../incl/EstadoUser.php";
+        // session_start();
         include_once "conexion.php";
         $log = $CNN->prepare("DELETE FROM cookies WHERE marca=:row1");
         $log->bindValue(':row1',$_COOKIE["MARK"]);

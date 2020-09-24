@@ -18,12 +18,12 @@
         <div class="datos">
 
             <nav class="topnav" id="myTopnav">
-                <a ref="Indicadores.php" target="Contenido" class="dropdown"  onclick="myFunction();"><i class="far fa-chart-bar"></i>  Indicadores de Consumo</a>
+                <a href="Indicadores.php" target="Contenido" class=""  onclick="myFunction();"><i class="far fa-chart-bar"></i>  Indicadores de Consumo</a>
                 <div class="dropdown">
                     <button class="dropbtn"><i class="fas fa-book"></i>    Reportes de proceso <i class="fa fa-caret-down"></i></button>
                     <div class="dropdown-content">
-                        <a href="#" target="Contenido" id="btnsiembra" onclick="myFunction();"><i class="fas fa-database"></i>    Curva de crecimiento</a>
-                        <a href="#" target="Contenido" id="btnlecturas" onclick="myFunction();"><i class="far fa-chart-bar"></i>  Descargar Datos</a>
+                        <a href="Curva.php" target="Contenido" id="btnsiembra" onclick="myFunction();"><i class="fas fa-database"></i>    Curva de crecimiento</a>
+                        <a href="Reportes.php" target="Contenido" id="btnlecturas" onclick="myFunction();"><i class="far fa-chart-bar"></i>  Descargar Datos</a>
                     </div>
                 </div>
                 <div class="dropdown">
@@ -41,12 +41,11 @@
             </nav>
 
 
-
-
-
             <div class="contenedor">
-                <iframe src="Indicadores.php" name="Contenido" frameborder="1" width="100%" height="100%" ></iframe>
+                <iframe id="Contenido" src="Biometrico.php" name="Contenido" frameborder="0" width="100%" height="100%" scrolling="yes"></iframe>
             </div>
+
+
         </div>
         <div class="container transp80 footer">
             <?php include "../incl/footer.php"?>

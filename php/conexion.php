@@ -1,4 +1,5 @@
 <?php
+
     function jsonEncodeArray( $array ){
 		array_walk_recursive( $array, function(&$item) { 
 		   $item = utf8_encode( $item ); 
@@ -7,9 +8,10 @@
 	};
 
 	try{
-		// $dbname = 'id12220197_facturar';
-		// $User = 'id12220197_alberth16';
-		// $Pass = 'Macarena1';
+
+		// $dbname = 'id14927970_biopez';
+		// $User = 'id14927970_albherth16';
+		// $Pass = 'TRDPS85JQZ-fez+#';
 
         $dbname = 'biopez';
 		$User = 'root';
@@ -17,6 +19,8 @@
 
 		$CNN = new PDO('mysql:host=localhost;dbname='.$dbname, $User, $Pass );
         $CNN->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		
+		
 		
 	} catch (PDOException $e){
 		Print "Hubo un error: " . $e->getMessage() . "" ; 
