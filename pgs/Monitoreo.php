@@ -19,7 +19,7 @@
         <div class="form">
 
             <div class="txts">
-            <label for="">Numero de Tanque:</label>
+                <label for="">Numero de Tanque:</label>
                 <select class="select_" id="No_Tanque">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -129,7 +129,7 @@
             </div>
 
 
-            <button class="btnGuardar"><i class="far fa-save"></i> Guardar</button>
+            <button id="btnGuardar" class="button"><i class="far fa-save"></i> Guardar</button>
         </div>
     </div>
 

@@ -29,14 +29,14 @@
             </div>
 
             <div class="txts">
-                <label for="">No. Estanque:</label>                
+                <label for="">No. Estanque:</label>
                 <input 
                     type="text" 
                     class="Txt100" 
                     id="txt_Estanque" 
                     placeholder="Estanque" 
                     name="txt_Estanque" 
-                    required                     
+                    required
                 />
             </div>
 
@@ -80,7 +80,7 @@
                 /> gm
             </div>
 
-            <button class="btnGuardar"><i class="far fa-save"></i> Guardar</button>
+            <button id="btnGuardar" class="button"><i class="far fa-save"></i> Guardar</button>
         </div>
     </div>
 
@@ -88,7 +88,7 @@
     <script>
         window.onload=function(){
             FechaActual();
-            HoraActual();            
+            HoraActual();
         }
 
         $(document).on('click', '.cancelbtn', function() {
@@ -98,7 +98,7 @@
         $(function() {
 			$.datepicker.setDefaults($.datepicker.regional["es"]);
 			$("#datepicker").datepicker({
-				dateFormat: 'dd-M-yy'				
+				dateFormat: 'dd-M-yy'
 			}).datepicker("setDate", new Date());
         });
 

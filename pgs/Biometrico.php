@@ -11,35 +11,54 @@
     <?php include "../incl/links.php"?>
 </head>
 <body class="cuerpo">
-    
+    <div class="oculto">
+        <?php include "../incl/header.php"?>
+    </div>
     <div class="container">
         <h3>Biometrico</h3>
         <div class="form">
-        
-            <div class="txts">
-                <label for=""><b>No. Muestra:</b></label>
+
+        <div class="txts">
+                <label for="">No. Muestra:</label>
                 <input 
-                    type="text" 
+                    type="text"
                     class="Txt100"
-                    id="txt_Muestra" 
-                    max="100" 
-                    min="1"  
-                    name="pMuestra" 
-                    required                    
+                    id="txt_Bio_NoMuestra"
+                    max="100"
+                    min="1"
+                    name="pMuestra"
+                    value="0"
+                    required
                     disabled
                 />
             </div>
 
             <div class="txts">
-                <label for="pMuestra"><b>% Muestra:</b></label>
+                <label for="">Especie:</label>
+                <select class="select_" id="No_Tanque">
+                    <option value="1">Tilapia</option>
+                </select>
+            </div>
+
+            <div class="txts">
+                <label for="">Numero de Tanque:</label>
+                <select class="select_" id="No_Tanque">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+
+            <div class="txts">
+                <label for="pMuestra">% Muestra:</label>
                 <input 
-                    type="number" 
-                    class="Txt100" 
-                    id="txt_Muestra" 
-                    max="100" 
-                    min="1" 
-                    placeholder="%" 
-                    name="pMuestra" 
+                    type="number"
+                    class="Txt100"
+                    id="txt_Bio_pMuestra"
+                    max="100"
+                    min="1"
+                    placeholder="%"
+                    name="pMuestra"
                     onkeypress="return esNumero(event, this.id);"
                     required
                     value="5"
@@ -47,32 +66,49 @@
             </div>
             
             <div class="txts">
-                <label for="Peso"><b>Peso:</b></label>
+                <label for="PecesEstanque">Peces en Estanque:</label>
                 <input 
-                    type="text" 
+                    type="text"
+                    class="Txt100 TxtNumb"
+                    id="txt_Bio_PecesEstanque"
+                    placeholder="Peces" 
+                    name="PecesEstanque"
+                    onkeypress="return esNumero(event, this.id);"
+                    required
+                />
+                <div class="txtInline labels">
+                Muestra:
+                    <div id="Bio_Muestra" class="resultados"></div>
+                </div>
+            </div>
+
+            <div class="txts">
+                <label for="Peso">Peso:</label>
+                <input 
+                    type="text"
                     class="Txt100 TxtNumb"
                     id="txt_Peso"
                     placeholder="Peso del pez" 
-                    name="Peso" 
+                    name="Peso"
                     onkeypress="return esNumero(event, this.id);"
                     required
                 />gm
             </div>
 
             <div class="txts">
-                <label for="Tamaño"><b>Tamaño:</b></label>
+                <label for="Tamaño">Tamaño:</label>
                 <input 
-                    type="text" 
+                    type="text"
                     class="Txt100 TxtNumb"
-                    id="txt_Tamañoepez" 
-                    placeholder="Largo del pez" 
-                    name="Tamaño" 
+                    id="txt_Tamañoepez"
+                    placeholder="Largo del pez"
+                    name="Tamaño"
                     onkeypress="return esNumero(event, this.id);"
                     required
                 />cm
             </div>
 
-            <button class="btnGuardar"><i class="far fa-save"></i> Guardar</button>
+            <button id="btnGuardar" class="button"><i class="far fa-save"></i> Guardar</button>
         </div>
     </div>
 
@@ -85,8 +121,17 @@
         $(document).on('click', '.cancelbtn', function() {
             window.location='Menu_Registro.php';
         });
-        
-    
+
+        $(document).on('keyup', '#txt_Bio_PecesEstanque', function() {
+            CalMuestra();
+            colorResultado();
+        });
+
+        $(document).on('change', '#txt_Bio_pMuestra', function() {
+            CalMuestra();
+            colorResultado();
+        });
+
     </script>
 </body>
 </html>

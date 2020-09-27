@@ -1,4 +1,4 @@
-function myFunction() {
+function CambioClase() {
     var x = document.getElementById("myTopnav");
     var frm = document.getElementById("Contenido");
     if (x.className === "topnav") {
@@ -84,4 +84,11 @@ function esNumero(evt, item){
             }
         }
     }
+ }
+
+ function CalMuestra(){
+    var pMuestra = $('#txt_Bio_pMuestra').val();
+    var PecesEstanque = $('#txt_Bio_PecesEstanque').val();
+    var res = (pMuestra * PecesEstanque)/100
+    $('#Bio_Muestra').html(res);
  }
