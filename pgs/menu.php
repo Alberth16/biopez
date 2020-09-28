@@ -42,7 +42,7 @@
 
 
             <div class="contenedor">
-                <iframe id="Contenido" src="Biometrico.php" name="Contenido" frameborder="0" width="100%" height="100%" scrolling="yes"></iframe>
+                <iframe id="Contenido" src="Siembra.php" name="Contenido" frameborder="0" width="100%" height="100%" ></iframe>
             </div>
 
 

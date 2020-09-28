@@ -44,7 +44,7 @@
                     onkeypress="return esNumero(event, this.id);"
                     required
                     value="5"
-                />%
+                /><span>%</span>
             </div>
             
             <div class="txts">
@@ -57,7 +57,7 @@
                     name="Peso"
                     onkeypress="return esNumero(event, this.id);"
                     required
-                />gm
+                /><span>gm</span>
             </div>
 
             <div class="txts">
@@ -70,7 +70,7 @@
                     name="Tamaño"
                     onkeypress="return esNumero(event, this.id);"
                     required
-                />cm
+                /><span>cm</span>
             </div>
 
             <button id="btnGuardar" class="button"><i class="far fa-save"></i> Guardar</button>

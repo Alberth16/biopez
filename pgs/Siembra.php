@@ -29,7 +29,7 @@
             </div>
 
             <div class="txts">
-                <label for="">No. Estanque:</label>
+                <label for="">Nombre de Estanque:</label>
                 <input 
                     type="text" 
                     class="Txt100" 
@@ -38,6 +38,15 @@
                     name="txt_Estanque" 
                     required
                 />
+            </div>
+
+            <div class="txts">
+                <label for="">Numero de Tanque:</label>
+                <select class="select_" id="No_Tanque">
+                    <option value="1">Tilapia</option>
+                    <option value="2">Koi</option>
+                    <option value="3">Carpa</option>
+                </select>
             </div>
 
             <div class="txts">
@@ -50,7 +59,7 @@
                     name="txt_LitrosAgua" 
                     onkeypress="return esNumero(event, this.id);"
                     required 
-                />litros
+                /> <span>litros</span>
             </div>
 
             <div class="txts">
@@ -63,7 +72,7 @@
                     name="txt_QtySiembra" 
                     onkeypress="return esNumero(event, this.id);"
                     required 
-                />unidades
+                /> <span>unid.</span>
 
             </div>
 
@@ -77,7 +86,7 @@
                     name="TallaInicial" 
                     onkeypress="return esNumero(event, this.id);"
                     required
-                /> gm
+                /> <span>gm</span>
             </div>
 
             <button id="btnGuardar" class="button"><i class="far fa-save"></i> Guardar</button>

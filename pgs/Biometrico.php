@@ -18,7 +18,7 @@
         <h3>Biometrico</h3>
         <div class="form">
 
-        <div class="txts">
+            <div class="txts">
                 <label for="">No. Muestra:</label>
                 <input 
                     type="text"
@@ -34,19 +34,27 @@
             </div>
 
             <div class="txts">
-                <label for="">Especie:</label>
-                <select class="select_" id="No_Tanque">
-                    <option value="1">Tilapia</option>
-                </select>
-            </div>
-
-            <div class="txts">
                 <label for="">Numero de Tanque:</label>
                 <select class="select_" id="No_Tanque">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                 </select>
+            </div>
+
+            <div class="txts">
+                <label for="">Especie:</label>
+                <input 
+                    type="text"
+                    class="Txt100"
+                    id="txt_Bio_NoMuestra"
+                    max="100"
+                    min="1"
+                    name="pMuestra"
+                    value="Tilapia"
+                    required
+                    disabled
+                />
             </div>
 
             <div class="txts">
@@ -62,7 +70,7 @@
                     onkeypress="return esNumero(event, this.id);"
                     required
                     value="5"
-                />%
+                /><span>%</span>
             </div>
             
             <div class="txts">
@@ -76,10 +84,12 @@
                     onkeypress="return esNumero(event, this.id);"
                     required
                 />
-                <div class="txtInline labels">
-                Muestra:
-                    <div id="Bio_Muestra" class="resultados"></div>
-                </div>
+                <span>
+                    <div class="txtInline labels">
+                    Muestra:
+                        <div id="Bio_Muestra" class="resultados"></div>
+                    </div>
+                </span>
             </div>
 
             <div class="txts">
@@ -92,7 +102,7 @@
                     name="Peso"
                     onkeypress="return esNumero(event, this.id);"
                     required
-                />gm
+                /><span>gm</span>
             </div>
 
             <div class="txts">
@@ -105,7 +115,7 @@
                     name="Tamaño"
                     onkeypress="return esNumero(event, this.id);"
                     required
-                />cm
+                /><span>cm</span>
             </div>
 
             <button id="btnGuardar" class="button"><i class="far fa-save"></i> Guardar</button>
