@@ -1,9 +1,21 @@
+<<<<<<< HEAD
 function CambioClase() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
       x.className += " responsive";
     } else {
       x.className = "topnav";
+=======
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    var frm = document.getElementById("Contenido");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+      frm.scrolling = "true";
+    } else {
+      x.className = "topnav";
+      frm.scrolling = "no";
+>>>>>>> 46c3a551dce152eaba9b556b8c12d0f590e58ca1
     }
   }
 
@@ -67,6 +79,7 @@ function esNumero(evt, item){
 
  function colorResultado(){
     var result = $('.resultados').html();
+<<<<<<< HEAD
     if(result == 0){
         $('.resultados').css('color','Black'); 
     } else{
@@ -74,10 +87,20 @@ function esNumero(evt, item){
             $('.resultados').css('color','Red');
         }else {
             if(result > 0){
+=======
+    if(result == 0){  
+        $('.resultados').css('color','Black'); 
+    } else{
+        if(result < 0){  
+            $('.resultados').css('color','Red');
+        }else {
+            if(result > 0){  
+>>>>>>> 46c3a551dce152eaba9b556b8c12d0f590e58ca1
                 $('.resultados').css('color','rgb(0, 95, 32)')
             }
         }
     }
+<<<<<<< HEAD
  }
 
  function CalMuestra(){
@@ -85,4 +108,6 @@ function esNumero(evt, item){
     var PecesEstanque = $('#txt_Bio_PecesEstanque').val();
     var res = (pMuestra * PecesEstanque)/100
     $('#Bio_Muestra').html(res);
+=======
+>>>>>>> 46c3a551dce152eaba9b556b8c12d0f590e58ca1
  }
