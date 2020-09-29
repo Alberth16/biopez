@@ -73,19 +73,11 @@ img.avatar {
 
 
 .contenedor {
-<<<<<<< HEAD
     border: yellow 1px solid ;
     position: relative;
     padding-bottom: 100%;
     height: auto;
     bottom: 0;
-=======
-    /* border: yellow 1px solid ; */
-    position: relative;
-    padding-bottom: 100%;
-    height: auto;
-    bottom: auto;
->>>>>>> 46c3a551dce152eaba9b556b8c12d0f590e58ca1
     overflow: hidden;
 }
 
@@ -97,7 +89,6 @@ img.avatar {
     height: 100%;
 }
 
-<<<<<<< HEAD
 .container {
   padding: 10px;
 }
@@ -105,13 +96,6 @@ img.avatar {
 
 .container .form{
     padding: 20px 0  0 0;
-=======
-
-
-
-.container{
-    padding: 10px;
->>>>>>> 46c3a551dce152eaba9b556b8c12d0f590e58ca1
 }
 
 .transp80{
@@ -133,19 +117,11 @@ nav{
     width: 100%;
 }
 
-<<<<<<< HEAD
-=======
-/* Add a black background color to the top navigation */
->>>>>>> 46c3a551dce152eaba9b556b8c12d0f590e58ca1
 .topnav {
     background-color: #333;
     overflow: hidden;
   }
   
-<<<<<<< HEAD
-=======
-  /* Style the links inside the navigation bar */
->>>>>>> 46c3a551dce152eaba9b556b8c12d0f590e58ca1
   .topnav a {
     float: left;
     display: block;
@@ -153,7 +129,6 @@ nav{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-<<<<<<< HEAD
   }
 
   .topnav .icon {
@@ -204,79 +179,12 @@ nav{
     color: black;
   }
   
-=======
-    /* font-size: 17px; */
-  }
-
-  /* Hide the link that should open and close the topnav on small screens */
-  .topnav .icon {
-    display: none;
-  }
-  
-  /* Dropdown container - needed to position the dropdown content */
-  .dropdown {
-    float: left;
-    overflow: hidden;
-  }
-  
-  /* Style the dropdown button to fit inside the topnav */
-  .dropdown .dropbtn {
-    font-size: 17px;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-  }
-  
-  /* Style the dropdown content (hidden by default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  /* Style the links inside the dropdown */
-  .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  /* Add a dark background on topnav links and the dropdown button on hover */
-  .topnav a:hover, .dropdown:hover .dropbtn {
-    background-color: #555;
-    color: white;
-  }
-  
-  /* Add a grey background to dropdown links on hover */
-  .dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  /* Show the dropdown menu when the user moves the mouse over the dropdown button */
->>>>>>> 46c3a551dce152eaba9b556b8c12d0f590e58ca1
   .dropdown:hover .dropdown-content {
     display: block;
   }
   
-<<<<<<< HEAD
   @media screen and (max-width: 800px) {
     .topnav a, .dropdown button.dropbtn {
-=======
-  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-  @media screen and (max-width: 800px) {
-    .topnav a, .dropdown .dropbtn {
->>>>>>> 46c3a551dce152eaba9b556b8c12d0f590e58ca1
       display: none;
     }
     .topnav a.icon {
@@ -285,10 +193,6 @@ nav{
     }
   }
   
-<<<<<<< HEAD
-=======
-  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
->>>>>>> 46c3a551dce152eaba9b556b8c12d0f590e58ca1
   @media screen and (max-width: 800px) {
     .topnav.responsive {position: relative;}
     .topnav.responsive a.icon {
@@ -303,11 +207,7 @@ nav{
     }
     .topnav.responsive .dropdown {float: none;}
     .topnav.responsive .dropdown-content {position: relative;}
-<<<<<<< HEAD
     .topnav.responsive .dropdown button.dropbtn {
-=======
-    .topnav.responsive .dropdown .dropbtn {
->>>>>>> 46c3a551dce152eaba9b556b8c12d0f590e58ca1
       display: block;
       width: 100%;
       text-align: left;
@@ -324,10 +224,6 @@ nav{
 header{
     padding: 1px;
     margin: 0;
-<<<<<<< HEAD
-=======
-    /* background-color:rgba(0, 92, 102, 0.945); */
->>>>>>> 46c3a551dce152eaba9b556b8c12d0f590e58ca1
     background: linear-gradient(25deg, rgb(11, 123, 129) 28%, rgb(46, 194, 185) 60%, rgb(12, 146, 144) 28%);
     color: white;
 }
@@ -386,7 +282,6 @@ div.oculto{
     }
     .contenedor{
         width: 100%;
-<<<<<<< HEAD
         height: 100%;
     }
 
@@ -397,12 +292,6 @@ div.oculto{
       width: 100%;
       height: 100%;
   }
-=======
-    }
-    iframe{
-      overflow: visible;
-    }
->>>>>>> 46c3a551dce152eaba9b556b8c12d0f590e58ca1
 }
 
 

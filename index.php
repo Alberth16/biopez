@@ -13,18 +13,12 @@
                 $datos = $sql_c->fetch(PDO::FETCH_ASSOC);
 
                 if($datos['ID']>=1){
-<<<<<<< HEAD
                     $query = "SELECT us.*, fn.*, ra.*
                             FROM usuarios AS us 
                                 LEFT JOIN fincas AS fn ON fn.id_user = us.ID
                                 LEFT JOIN rangos AS ra ON us.Rol = ra.ID_ra
                             WHERE us.ID=:ids";
 
-=======
-                    $query = "SELECT us.ID as ID, us.Nombre as Nombre, us.Correo as Correo, us.Clave as Clave, us.Rol as Rol, us.Estado as Estado, ra.Descripcion as DescRols  
-                            FROM usuarios us INNER JOIN rangos ra ON us.Rol = ra.ID
-                            WHERE us.ID=:ids";
->>>>>>> 46c3a551dce152eaba9b556b8c12d0f590e58ca1
                     $resultadoS = $CNN->prepare($query);
                     $resultadoS->bindValue(':ids',$datos['ID_user']);
                     $resultadoS->execute();
@@ -48,10 +42,7 @@
                         //     break;
                     }
                 }
-<<<<<<< HEAD
                 $query= null;
-=======
->>>>>>> 46c3a551dce152eaba9b556b8c12d0f590e58ca1
             }
         }
 
@@ -59,18 +50,12 @@
                 $usuario = strtolower($_POST['txt_Email']);
                 $clave = md5($_POST['txt_Clave']);
 
-<<<<<<< HEAD
                 $query = "SELECT us.*, fn.*, ra.*
                         FROM usuarios AS us 
                             LEFT JOIN fincas AS fn ON fn.id_user = us.ID 
                             LEFT JOIN rangos AS ra ON us.Rol = ra.ID_ra
                         WHERE us.Correo = :usuario";
 
-=======
-                $query = "SELECT us.ID, us.Nombre, us.Correo, us.Clave, us.Rol, us.Estado, ra.Descripcion as DescRols  
-                            FROM usuarios us INNER JOIN rangos ra ON us.Rol = ra.ID
-                            WHERE us.Correo = :usuario";
->>>>>>> 46c3a551dce152eaba9b556b8c12d0f590e58ca1
                 $resultado = $CNN->prepare($query);
                 $resultado->bindParam(':usuario', $usuario); 
                 $resultado->execute();
@@ -104,10 +89,7 @@
                     }
                 }
                 $CNN = null;
-<<<<<<< HEAD
                 $query= null;
-=======
->>>>>>> 46c3a551dce152eaba9b556b8c12d0f590e58ca1
             }
         
     }
@@ -140,27 +122,16 @@
         <form action="<?php $_SERVER ['SCRIPT_NAME'] ?>" method="POST">
         <div class="container" id="registros">
             <label for="uname"><b>Usuario</b></label>
-<<<<<<< HEAD
             <input type="email" class="TxtAll" placeholder="nombre@ejemplo.com" id="txt_Email" required name="txt_Email">
 
             <label for="psw"><b>Contraseña</b></label>
             <input type="password" class="TxtAll" placeholder="Contraseña" id="txt_Clave" required name="txt_Clave">
-=======
-            <input type="email" class="TxtAll" placeholder="Introdusca su email" id="txt_Email" required name="txt_Email">
-
-            <label for="psw"><b>Contraseña</b></label>
-            <input type="password" class="TxtAll" placeholder="Introdusca su Contraseña" id="txt_Clave" required name="txt_Clave">
->>>>>>> 46c3a551dce152eaba9b556b8c12d0f590e58ca1
 
             <label>
                 <input type="checkbox"  name="remember" id="Chk_Recordar"> Recordarme
             </label>
 
-<<<<<<< HEAD
             <button type="submit" id="btn_Aceptar" class="button"><i class="far fa-check-circle"></i>   Aceptar</button>
-=======
-            <button type="submit" id="btn_Aceptar"><i class="far fa-check-circle"></i>   Aceptar</button>
->>>>>>> 46c3a551dce152eaba9b556b8c12d0f590e58ca1
         </div>
         </form>
         <div class="container container_login" style="background-color:#f1f1f1">
