@@ -21,7 +21,7 @@
             <div class="txts">
                 <div class="Boton_Div">Energia Electrica:</div>
 
-                <div class="oculto" id="Energia">
+                <div class="ocultos" id="Energia">
 
                     <div class="txts" id="Lec_Anteriror">
                         <div class="txtInline">
@@ -85,7 +85,7 @@
             </div>
 
 
-            <button class="btnGuardar"><i class="far fa-save"></i> Guardar</button>
+            <button id="btnGuardar" class="button"><i class="far fa-save"></i> Guardar</button>
         </div>
     </div>
 

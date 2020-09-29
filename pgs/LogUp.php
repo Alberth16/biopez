@@ -11,23 +11,17 @@
     <?php include "../incl/links.php"?>
 </head>
 <body class="cuerpo">
-<<<<<<< HEAD
-    <div class="oculto">
-        <?php include "../incl/header.php"?>
-    </div>
-=======
     
->>>>>>> 46c3a551dce152eaba9b556b8c12d0f590e58ca1
     <div class="container">
         <h3>Biometrico</h3>
         <div class="form">
-
+        
             <div class="txts">
-                <label for="">No. Muestra:</label>
+                <label for=""><b>No. Muestra:</b></label>
                 <input 
                     type="text"
                     class="Txt100"
-                    id="txt_Bio_NoMuestra"
+                    id="txt_Muestra"
                     max="100"
                     min="1"
                     name="pMuestra"
@@ -38,35 +32,11 @@
             </div>
 
             <div class="txts">
-                <label for="">Numero de Tanque:</label>
-                <select class="select_" id="No_Tanque">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-            </div>
-
-            <div class="txts">
-                <label for="">Especie:</label>
-                <input 
-                    type="text"
-                    class="Txt100"
-                    id="txt_Bio_NoMuestra"
-                    max="100"
-                    min="1"
-                    name="pMuestra"
-                    value="Tilapia"
-                    required
-                    disabled
-                />
-            </div>
-
-            <div class="txts">
-                <label for="pMuestra">% Muestra:</label>
+                <label for="pMuestra"><b>% Muestra:</b></label>
                 <input 
                     type="number"
                     class="Txt100"
-                    id="txt_Bio_pMuestra"
+                    id="txt_Muestra"
                     max="100"
                     min="1"
                     placeholder="%"
@@ -78,26 +48,7 @@
             </div>
             
             <div class="txts">
-                <label for="PecesEstanque">Peces en Estanque:</label>
-                <input 
-                    type="text"
-                    class="Txt100 TxtNumb"
-                    id="txt_Bio_PecesEstanque"
-                    placeholder="Peces" 
-                    name="PecesEstanque"
-                    onkeypress="return esNumero(event, this.id);"
-                    required
-                />
-                <span>
-                    <div class="txtInline labels">
-                    Muestra:
-                        <div id="Bio_Muestra" class="resultados"></div>
-                    </div>
-                </span>
-            </div>
-
-            <div class="txts">
-                <label for="Peso">Peso:</label>
+                <label for="Peso"><b>Peso:</b></label>
                 <input 
                     type="text"
                     class="Txt100 TxtNumb"
@@ -110,7 +61,7 @@
             </div>
 
             <div class="txts">
-                <label for="Tamaño">Tamaño:</label>
+                <label for="Tamaño"><b>Tamaño:</b></label>
                 <input 
                     type="text"
                     class="Txt100 TxtNumb"
@@ -135,17 +86,8 @@
         $(document).on('click', '.cancelbtn', function() {
             window.location='Menu_Registro.php';
         });
-
-        $(document).on('keyup', '#txt_Bio_PecesEstanque', function() {
-            CalMuestra();
-            colorResultado();
-        });
-
-        $(document).on('change', '#txt_Bio_pMuestra', function() {
-            CalMuestra();
-            colorResultado();
-        });
-
+        
+    
     </script>
 </body>
 </html>

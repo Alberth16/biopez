@@ -31,6 +31,7 @@ h1,h2,h3{
 .cuerpo{
     margin: auto;
     width: 1100px;
+
 }
 
 .recuadro {
@@ -72,11 +73,11 @@ img.avatar {
 
 
 .contenedor {
-    /* border: yellow 1px solid ; */
+    border: yellow 1px solid ;
     position: relative;
     padding-bottom: 100%;
     height: auto;
-    bottom: auto;
+    bottom: 0;
     overflow: hidden;
 }
 
@@ -88,11 +89,13 @@ img.avatar {
     height: 100%;
 }
 
+.container {
+  padding: 10px;
+}
 
 
-
-.container{
-    padding: 10px;
+.container .form{
+    padding: 20px 0  0 0;
 }
 
 .transp80{
@@ -114,13 +117,11 @@ nav{
     width: 100%;
 }
 
-/* Add a black background color to the top navigation */
 .topnav {
     background-color: #333;
     overflow: hidden;
   }
   
-  /* Style the links inside the navigation bar */
   .topnav a {
     float: left;
     display: block;
@@ -128,21 +129,17 @@ nav{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    /* font-size: 17px; */
   }
 
-  /* Hide the link that should open and close the topnav on small screens */
   .topnav .icon {
     display: none;
   }
   
-  /* Dropdown container - needed to position the dropdown content */
   .dropdown {
     float: left;
     overflow: hidden;
   }
   
-  /* Style the dropdown button to fit inside the topnav */
   .dropdown .dropbtn {
     font-size: 17px;
     border: none;
@@ -154,7 +151,6 @@ nav{
     margin: 0;
   }
   
-  /* Style the dropdown content (hidden by default) */
   .dropdown-content {
     display: none;
     position: absolute;
@@ -164,7 +160,6 @@ nav{
     z-index: 1;
   }
   
-  /* Style the links inside the dropdown */
   .dropdown-content a {
     float: none;
     color: black;
@@ -174,26 +169,22 @@ nav{
     text-align: left;
   }
   
-  /* Add a dark background on topnav links and the dropdown button on hover */
-  .topnav a:hover, .dropdown:hover .dropbtn {
+  .topnav a:hover, .dropdown:hover button.dropbtn {
     background-color: #555;
     color: white;
   }
   
-  /* Add a grey background to dropdown links on hover */
   .dropdown-content a:hover {
     background-color: #ddd;
     color: black;
   }
   
-  /* Show the dropdown menu when the user moves the mouse over the dropdown button */
   .dropdown:hover .dropdown-content {
     display: block;
   }
   
-  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
   @media screen and (max-width: 800px) {
-    .topnav a, .dropdown .dropbtn {
+    .topnav a, .dropdown button.dropbtn {
       display: none;
     }
     .topnav a.icon {
@@ -202,7 +193,6 @@ nav{
     }
   }
   
-  /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
   @media screen and (max-width: 800px) {
     .topnav.responsive {position: relative;}
     .topnav.responsive a.icon {
@@ -217,7 +207,7 @@ nav{
     }
     .topnav.responsive .dropdown {float: none;}
     .topnav.responsive .dropdown-content {position: relative;}
-    .topnav.responsive .dropdown .dropbtn {
+    .topnav.responsive .dropdown button.dropbtn {
       display: block;
       width: 100%;
       text-align: left;
@@ -234,7 +224,6 @@ nav{
 header{
     padding: 1px;
     margin: 0;
-    /* background-color:rgba(0, 92, 102, 0.945); */
     background: linear-gradient(25deg, rgb(11, 123, 129) 28%, rgb(46, 194, 185) 60%, rgb(12, 146, 144) 28%);
     color: white;
 }
@@ -267,12 +256,14 @@ header{
     display: inline-block;
 }
 
-.Boton_Div,
-.oculto{
+/* .Boton_Div, */
+div.oculto{
+    display: none;
     margin: 10px;
     padding: 5px 10px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);;
     text-align: center;
+    
 }
 
 
@@ -291,10 +282,16 @@ header{
     }
     .contenedor{
         width: 100%;
+        height: 100%;
     }
-    iframe{
-      overflow: visible;
-    }
+
+    .contenedor iframe{
+      position: absolute;
+      top:0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+  }
 }
 
 

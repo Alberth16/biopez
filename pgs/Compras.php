@@ -30,13 +30,13 @@
             </div>
 
             <div class="txts">
-                <label for="">Fecha:</label>                
+                <label for="">Fecha:</label>
                 <input 
                     type="text" 
                     class="Txt100" 
                     id="Compra_Compras" 
                     placeholder="Compra"
-                    required                     
+                    required
                 />de Compra
             </div>
 
@@ -57,7 +57,7 @@
                     type="text" 
                     class="Txt100 TxtNumb"
                     id="txt_Compra_Producto"
-                    placeholder="Producto"                     
+                    placeholder="Producto"
                     required 
                 />Descripción
 
@@ -94,7 +94,7 @@
                 /> Lps.
             </div>
 
-            <button class="btnGuardar"><i class="far fa-save"></i> Guardar</button>
+            <button id="btnGuardar" class="button"><i class="far fa-save"></i> Guardar</button>
         </div>
     </div>
 
@@ -102,7 +102,7 @@
     <script>
         window.onload=function(){
             FechaActual();
-            HoraActual();            
+            HoraActual();
         }
 
         $(document).on('click', '.cancelbtn', function() {
@@ -112,11 +112,11 @@
         $(function() {
 			$.datepicker.setDefaults($.datepicker.regional["es"]);
 			$("#Compra_Compras").datepicker({
-				dateFormat: 'dd-M-yy'				
+				dateFormat: 'dd-M-yy'
             }).datepicker("setDate", new Date());
 
             $("#Compra_Vencimiento").datepicker({
-				dateFormat: 'dd-M-yy'				
+				dateFormat: 'dd-M-yy'
 			}).datepicker("setDate", new Date());
         });
 

@@ -1,12 +1,11 @@
-function myFunction() {
+
+
+function CambioClase() {
     var x = document.getElementById("myTopnav");
-    var frm = document.getElementById("Contenido");
     if (x.className === "topnav") {
       x.className += " responsive";
-      frm.scrolling = "true";
     } else {
       x.className = "topnav";
-      frm.scrolling = "no";
     }
   }
 
@@ -22,7 +21,6 @@ function FechaActual (){
     dia[5]="Viernes";
     dia[6]="Sabado";
 
-    
     var d = f.getDate();
     d=checkTime(d)
 
@@ -33,35 +31,45 @@ function FechaActual (){
 
 function HoraActual(){
 
-    today=new Date();    
-    h=today.getHours();    
-    m=today.getMinutes();    
+    today=new Date();
+    h=today.getHours();
+    m=today.getMinutes();
     s=today.getSeconds(); 
-    h=checkTime(h);   
-    m=checkTime(m);    
-    s=checkTime(s);    
+    h=checkTime(h);
+    m=checkTime(m);
+    s=checkTime(s);
     hora = h+":"+m+":"+s
     $('.hora').html(hora);
-    
+
     t=setTimeout('HoraActual()',500);
 }
-    
+
 function checkTime(i){
     if (i<10) {i="0" + i;}
     return i;
 }
-    
 
 function esNumero(evt, item){
     var key = (evt.which) ? evt.which : evt.keyCode;
-    //alert(key);
-    let cadena = document.getElementById(item).value;    
+    let cadena = document.getElementById(item).value;
     if(cadena.indexOf('.') == -1){
         return (key <= 13 || (key >= 48 && key <= 57) || key == 46);
     }else{
         return (key <= 13 || (key >= 48 && key <= 57));
     }
  };
+
+ function objAjax(url, data) {
+	var ajax = $.ajax({
+		"method": "POST",
+		"url": url,
+		"cache": true,
+		"data": data,
+		"success": function (data) { }
+	})
+	return ajax;
+}
+
 
  function calculoElectricidad(id1, id2){
     var lectura1 = document.getElementById(id1).value;
@@ -73,15 +81,22 @@ function esNumero(evt, item){
 
  function colorResultado(){
     var result = $('.resultados').html();
-    if(result == 0){  
+    if(result == 0){
         $('.resultados').css('color','Black'); 
     } else{
-        if(result < 0){  
+        if(result < 0){
             $('.resultados').css('color','Red');
         }else {
-            if(result > 0){  
+            if(result > 0){
                 $('.resultados').css('color','rgb(0, 95, 32)')
             }
         }
     }
+ }
+
+ function CalMuestra(){
+    var pMuestra = $('#txt_Bio_pMuestra').val();
+    var PecesEstanque = $('#txt_Bio_PecesEstanque').val();
+    var res = (pMuestra * PecesEstanque)/100
+    $('#Bio_Muestra').html(res);
  }

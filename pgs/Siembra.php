@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Siembra</title>
     <?php include "../incl/links.php"?>
+    <script src="../js/fnSiembra.js"></script>
 </head>
 <body class="cuerpo">
 
@@ -29,15 +30,20 @@
             </div>
 
             <div class="txts">
-                <label for="">No. Estanque:</label>                
+                <label for="">Nombre de Estanque:</label>
                 <input 
                     type="text" 
                     class="Txt100" 
                     id="txt_Estanque" 
                     placeholder="Estanque" 
                     name="txt_Estanque" 
-                    required                     
+                    required
                 />
+            </div>
+
+            <div class="txts">
+                <label for="">Especimen:</label>
+                <select class="select_" id="noEspecie"></select>
             </div>
 
             <div class="txts">
@@ -50,7 +56,7 @@
                     name="txt_LitrosAgua" 
                     onkeypress="return esNumero(event, this.id);"
                     required 
-                />litros
+                /> <span>litros</span>
             </div>
 
             <div class="txts">
@@ -63,7 +69,7 @@
                     name="txt_QtySiembra" 
                     onkeypress="return esNumero(event, this.id);"
                     required 
-                />unidades
+                /> <span>unid.</span>
 
             </div>
 
@@ -77,10 +83,10 @@
                     name="TallaInicial" 
                     onkeypress="return esNumero(event, this.id);"
                     required
-                /> gm
+                /> <span>gm</span>
             </div>
 
-            <button class="btnGuardar"><i class="far fa-save"></i> Guardar</button>
+            <button id="btnGuardar" class="button"><i class="far fa-save"></i> Guardar</button>
         </div>
     </div>
 
@@ -88,17 +94,22 @@
     <script>
         window.onload=function(){
             FechaActual();
-            HoraActual();            
+            HoraActual();
+            llenarComboEspecie();
         }
 
         $(document).on('click', '.cancelbtn', function() {
             window.location='Menu_Registro.php';
         });
+
+        $(document).on('click', '#btnGuardar', function() {
+            limpiar_form();
+        });
         
         $(function() {
 			$.datepicker.setDefaults($.datepicker.regional["es"]);
 			$("#datepicker").datepicker({
-				dateFormat: 'dd-M-yy'				
+				dateFormat: 'dd-M-yy'
 			}).datepicker("setDate", new Date());
         });
 
