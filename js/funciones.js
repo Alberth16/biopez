@@ -1,3 +1,5 @@
+
+
 function CambioClase() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
@@ -56,6 +58,18 @@ function esNumero(evt, item){
         return (key <= 13 || (key >= 48 && key <= 57));
     }
  };
+
+ function objAjax(url, data) {
+	var ajax = $.ajax({
+		"method": "POST",
+		"url": url,
+		"cache": true,
+		"data": data,
+		"success": function (data) { }
+	})
+	return ajax;
+}
+
 
  function calculoElectricidad(id1, id2){
     var lectura1 = document.getElementById(id1).value;

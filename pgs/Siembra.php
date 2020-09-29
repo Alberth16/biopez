@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Siembra</title>
     <?php include "../incl/links.php"?>
+    <script src="../js/fnSiembra.js"></script>
 </head>
 <body class="cuerpo">
 
@@ -41,12 +42,8 @@
             </div>
 
             <div class="txts">
-                <label for="">Numero de Tanque:</label>
-                <select class="select_" id="No_Tanque">
-                    <option value="1">Tilapia</option>
-                    <option value="2">Koi</option>
-                    <option value="3">Carpa</option>
-                </select>
+                <label for="">Especimen:</label>
+                <select class="select_" id="noEspecie"></select>
             </div>
 
             <div class="txts">
@@ -98,10 +95,15 @@
         window.onload=function(){
             FechaActual();
             HoraActual();
+            llenarComboEspecie();
         }
 
         $(document).on('click', '.cancelbtn', function() {
             window.location='Menu_Registro.php';
+        });
+
+        $(document).on('click', '#btnGuardar', function() {
+            limpiar_form();
         });
         
         $(function() {

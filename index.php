@@ -131,15 +131,21 @@
                 <input type="checkbox"  name="remember" id="Chk_Recordar"> Recordarme
             </label>
 
-            <button type="submit" id="btn_Aceptar" class="button"><i class="far fa-check-circle"></i>   Aceptar</button>
+            <button type="submit" onclick="cifrar();" id="btn_Aceptar" class="button"><i class="far fa-check-circle"></i>   Aceptar</button>
         </div>
         </form>
         <div class="container container_login" style="background-color:#f1f1f1">
             <span class="psw">Olviodó su <a href="pgs/menu.php" id="Restablecer_Clave">Contraseña?</a></span>
         </div>
     </div>
+
+    <script src="js/sha1.js"></script>
     <script>
-    
+        function cifrar(){
+            var input_pass = document.getElementById("txt_Clave");
+            input_pass.value = sha1(input_pass.value);
+        }
     </script>
+    
 </body>
 </html>
