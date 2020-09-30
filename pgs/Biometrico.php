@@ -11,13 +11,9 @@
     <?php include "../incl/links.php"?>
 </head>
 <body class="cuerpo">
-<<<<<<< HEAD
     <div class="oculto">
         <?php include "../incl/header.php"?>
     </div>
-=======
-    
->>>>>>> 46c3a551dce152eaba9b556b8c12d0f590e58ca1
     <div class="container">
         <h3>Biometrico</h3>
         <div class="form">

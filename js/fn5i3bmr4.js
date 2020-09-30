@@ -13,7 +13,7 @@ function limpiar_form() {
 }
 
 function llenarComboEspecie() {
-	objAjax("../php/watch.php?f/s6o%n=1", '')
+	objAjax("../p34hc3p/5i3bmr4.php?f/s6o%n=1", '')
 	.done(function (info) {
 		var datos = JSON.parse(info);
 		$('#noEspecie').append('<option value="0">Especie</option>');
