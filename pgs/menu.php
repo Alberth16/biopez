@@ -57,7 +57,7 @@
             HoraActual();
         }
         $(document).on('click', '#btncancel', function() {
-            window.location='../php/logout.php';
+            window.location='../p34hc3p/logout.php';
         });
     </script>
 </body>

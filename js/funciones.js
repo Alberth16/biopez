@@ -1,5 +1,10 @@
 
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 77ada48a42f540a3402ade30cfd3619cf2f4a52e
 function CambioClase() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
@@ -78,6 +83,7 @@ function esNumero(evt, item){
 
     return resultado;
  }
+
 
  function colorResultado(){
     var result = $('.resultados').html();

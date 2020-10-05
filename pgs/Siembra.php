@@ -9,13 +9,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Siembra</title>
     <?php include "../incl/links.php"?>
+<<<<<<< HEAD
+    <script src="../js/fn5i3bmr4.js"></script>
+=======
     <script src="../js/fnSiembra.js"></script>
+>>>>>>> 77ada48a42f540a3402ade30cfd3619cf2f4a52e
 </head>
 <body class="cuerpo">
 
-    
+    <div class="oculto">
+    <?php include "../incl/header.php"?>
+    </div>
+
     <div class="container">
-        <div class="msgbox"></div>
+        <div id="msgbox"></div>
         <h3>Siembra</h3>
         <div class="form">
         
@@ -70,7 +77,10 @@
                     onkeypress="return esNumero(event, this.id);"
                     required 
                 /> <span>unid.</span>
+<<<<<<< HEAD
+=======
 
+>>>>>>> 77ada48a42f540a3402ade30cfd3619cf2f4a52e
             </div>
 
             <div class="txts">
@@ -89,7 +99,26 @@
             <button id="btnGuardar" class="button"><i class="far fa-save"></i> Guardar</button>
         </div>
     </div>
-
+<!--     
+    <div class="container form">
+        <table class="siembra">
+            <caption>Estanques Registrados</caption>
+            <tr>
+                <th>Fecha</th>
+                <th>Estanque</th>
+                <th>Especie</th>
+                <th>Cantidad</th>
+                <th>Tamaño Inicial</th>
+            </tr>
+            <tbody class="contenidoSiembra">
+                <td>29-Sep-2020</td>
+                <td>D-5</td>
+                <td>Tilapia</td>
+                <td>6000</td>
+                <td>3.2</td>
+            </tbody>
+        </table>
+    </div> -->
 
     <script>
         window.onload=function(){
@@ -103,6 +132,10 @@
         });
 
         $(document).on('click', '#btnGuardar', function() {
+<<<<<<< HEAD
+            Registrar_Datos();
+=======
+>>>>>>> 77ada48a42f540a3402ade30cfd3619cf2f4a52e
             limpiar_form();
         });
         
