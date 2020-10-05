@@ -1,7 +1,7 @@
 <?php
     try{
         session_start();
-        include "php/conexion.php";
+        include "p34hc3p/conexion.php";
 
         if(isset($_COOKIE['REF']) && isset($_COOKIE['MARK'])){
             if($_COOKIE['REF']!="" || $_COOKIE['MARK']!=""){
@@ -27,7 +27,7 @@
                 }
 
                 if(isset($_SESSION['Activo'])){
-                    switch($_SESSION['Activo']['Rol']){
+                    switch($_SESSION['Activo']['ID_ra']){
                         case 1:
                             header('location: pgs/menu.php');
                             break;
@@ -42,7 +42,7 @@
                         //     break;
                     }
                 }
-                $query= null;
+                //$query= null;
             }
         }
 
@@ -63,8 +63,11 @@
 
                 $ids = $data['ID'];
 
-                if($data['Correo'] == $usuario && $data['Estado']==1){	
+                if($data['Correo'] != $usuario && $data['Estado']==1){	
+                    echo"<script type=\"text/javascript\">alert(' Usuario incorrecto'); window.location='';</script>";
+                }else{
                     if ($data['Clave'] == $clave ) {
+                        
                         $_SESSION['Activo'] = $data;
 
                         if(isset($_POST['remember'])){
@@ -108,11 +111,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="descripcion" content="Sistema de control de cultivo para piscicultores">
+    <meta name="theme-color" content="#4da6ff">
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./img/logo.png">
+    <link rel="apple-touch-startup-image" href="./img/logo.png">
+    <link rel="manifest" href="./manifest.json">
+
     <title>Login de usuario</title>
     <link rel="stylesheet" href="css/principal.css">
     <link rel="stylesheet" href="css/formularios.css">    
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
     <script src="js/icons.js"></script>
+    <script src="js/sha1.js"></script>
 </head>
 <body>
     <div class="recuadro">
@@ -139,13 +154,13 @@
         </div>
     </div>
 
-    <script src="js/sha1.js"></script>
+    <script src="./script.js"></script>
     <script>
+        var input_pass = document.getElementById("txt_Clave");
         function cifrar(){
-            var input_pass = document.getElementById("txt_Clave");
             input_pass.value = sha1(input_pass.value);
+            alert(input_pass.value );
         }
     </script>
-    
 </body>
 </html>

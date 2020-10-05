@@ -7,10 +7,10 @@
         <p id="user_name"><b ><?php echo $_SESSION['Activo']['Nombre'];?></b></p>
         <p id="user_posicion"><?php echo $_SESSION['Activo']['Descripcion'];?></p>
 
-        <div class="oculto">
+        <div class="ocultos">
             <p id="idFinca"><?php echo $_SESSION['Activo']['ID_fn'];?></p>
             <p id="descFinca"><?php echo $_SESSION['Activo']['Finca'];?></p>
-            <p id="especia"><?php echo $_SESSION['Activo']['Especie'];?></p>
+            <p id="ID_user"><?php echo $_SESSION['Activo']['ID'];?></p>
         </div>
         
     </div>

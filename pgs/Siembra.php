@@ -13,9 +13,12 @@
 </head>
 <body class="cuerpo">
 
-    
+    <div class="oculto">
+    <?php include "../incl/header.php"?>
+    </div>
+
     <div class="container">
-        <div class="msgbox"></div>
+        <div id="msgbox"></div>
         <h3>Siembra</h3>
         <div class="form">
         
@@ -88,6 +91,7 @@
             <button id="btnGuardar" class="button"><i class="far fa-save"></i> Guardar</button>
         </div>
     </div>
+<!--     
     <div class="container form">
         <table class="siembra">
             <caption>Estanques Registrados</caption>
@@ -106,7 +110,7 @@
                 <td>3.2</td>
             </tbody>
         </table>
-    </div>
+    </div> -->
 
     <script>
         window.onload=function(){
@@ -120,6 +124,7 @@
         });
 
         $(document).on('click', '#btnGuardar', function() {
+            Registrar_Datos();
             limpiar_form();
         });
         

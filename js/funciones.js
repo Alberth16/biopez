@@ -1,5 +1,7 @@
 
 
+
+
 function CambioClase() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
@@ -78,6 +80,7 @@ function esNumero(evt, item){
 
     return resultado;
  }
+
 
  function colorResultado(){
     var result = $('.resultados').html();

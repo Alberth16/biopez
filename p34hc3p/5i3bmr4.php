@@ -8,10 +8,10 @@
                 Combo_Especie();
                 break;
             case 2:
-                Buscar();
+                Agregar();
                 break;
             case 3:
-                Agregar();
+                Buscar_Especie();
                 break;
             case 4:
                 Modificar();
@@ -41,6 +41,78 @@
             die();
         }
     } 
+
+
+    // Si
+    function Agregar(){
+        try{
+            include "conexion.php";
+            // include "functions.php";
+
+            if(isset($_POST['NoEstanque'])){
+    
+                $FechaSiembra = $_POST['FechaSiembra'];
+                $NoEstanque = $_POST['NoEstanque'];
+                $Especie = $_POST['Especie'];
+                $LitroAgua = $_POST['LitroAgua'];
+                $CantidadSiembra = $_POST['CantidadSiembra'];
+                $TallaInicial = $_POST['TallaInicial'];
+                $ID_Finca = $_POST['ID_Finca'];
+                $ID_user = $_POST['ID_user'];
+                $finca = $_POST['finca'];
+
+                $resultado = $CNN->prepare("SELECT * FROM siembras WHERE NoEstanque =? AND FechaSiembra =? AND ID_Finca =?");
+                $resultado->bindValue(1, $NoEstanque); 
+                $resultado->bindValue(2, $FechaSiembra); 
+                $resultado->bindValue(3, $ID_Finca); 
+                $resultado->execute();
+                $datos = $resultado->rowCount().'<br>';
+                
+                if($datos >= 1){
+                    $data =array('data'=>array("Siembra ya existe, intente con otro nombre de Estanque.",2));
+                }else{
+                    
+                    $registro = $CNN->prepare(
+                        'INSERT INTO siembras (FechaSiembra, NoEstanque, Especie, AgualLts, SiembraQty, Tamano, ID_Finca, ID_user)
+                         VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
+                    );
+                    $registro->bindValue(1, $FechaSiembra); 
+                    $registro->bindValue(2, $NoEstanque); 
+                    $registro->bindValue(3, $Especie); 
+                    $registro->bindValue(4, $LitroAgua);
+                    $registro->bindValue(5, $CantidadSiembra); 
+                    $registro->bindValue(6,$TallaInicial);
+                    $registro->bindValue(7,$ID_Finca);
+                    $registro->bindValue(8,$ID_user);
+
+                    if($registro->execute()){
+                        $fincas = $CNN->prepare('INSERT INTO fincas (Finca, Especie, id_user, Estado) VALUES(?, ?, ?, 1)');
+                        $fincas->bindValue(1,$finca);
+                        $fincas->bindValue(3,$ID_user);
+                        $fincas->execute();
+
+                        $estanques = $CNN->prepare('INSERT INTO estanques (`NoEstanque`, `ID_Espe`, `ID_user`, `ID_Finca`) 
+                                                    VALUES');
+                        $estanques->bindValue(1, $NoEstanque);
+                        $estanques->bindValue(2, $NoEstanque);
+                        $estanques->bindValue(3, $NoEstanque);
+                        $estanques->bindValue(4, $NoEstanque);
+                        $estanques->execute();
+
+                        $data =array('data'=>array("Siembra Registrada.",1));
+                    }
+                }
+            }
+    
+            echo json_encode($data); //json_encode
+    
+            $CNN = null; 
+            
+        } catch (PDOException $e){
+            echo "Error: Agregar <br/>" . $e->getMessage();
+            die();
+        }
+    }
 
     // No
     function Buscar_Especie(){
@@ -131,58 +203,6 @@
         }
     }
 
-    // No
-    function Agregar(){
-        try{
-            include "conexion.php";
-            include "functions.php";
-
-            if(isset($_POST['vNombreCliente'])){
-    
-                $rtn = $_POST['vRTN'];
-                $correo = $_POST['vcorreoCliente'];
-                $nombre = $_POST['vNombreCliente'];
-                $fechaIng = fechaC();
-                $hora = HoraLarga();
-                $telefonoCliente = $_POST['vtelefonoCliente'];
-                $direccion = $_POST['vdireccion'];
-
-    
-                $resultado = $CNN->prepare("SELECT * FROM cliente WHERE nombre=:nombre");
-                $resultado->bindValue(':nombre', $nombre); 
-                $resultado->execute();
-                $datos = $resultado->fetch(PDO::FETCH_ASSOC);
-                 
-                if($datos['nombre'] != $nombre){
-                        $registro = $CNN->prepare(
-                            'INSERT INTO cliente (RTN, nombre, correo, telefono, direccion, fecha_registro, hora, estado) 
-                            VALUES (:rtn, :nombre, :correo, :telefonoCliente, :direccion, :fechaIng, :hora, 1)'
-                        );
-                        $registro->bindValue(':rtn', $rtn); 
-                        $registro->bindValue(':nombre', $nombre); 
-                        $registro->bindValue(':correo', $correo); 
-                        $registro->bindValue(':telefonoCliente', $telefonoCliente);
-                        $registro->bindValue(':direccion', $direccion); 
-                        $registro->bindValue(':fechaIng',$fechaIng);
-                        $registro->bindValue(':hora',$hora);
-
-                        if($registro->execute()){
-                            $data =array('data'=>array("El Cliente ".$nombre.", ha sido Registrado.",1));
-                        }
-                }else{
-                    $data =array('data'=>array("Usuario ". $nombre ." ya existe, intente con otro nombre.",2));
-                }
-            }
-    
-            echo jsonEncodeArray($data); //json_encode
-    
-            $CNN = null; 
-            
-        } catch (PDOException $e){
-            echo $nombre . "<br>Hubo un error: Agregar" . $e->getMessage() . "<br>" ;
-            die();
-        }
-    }
 
     // No
     function Modificar(){

@@ -1,4 +1,4 @@
-module.exports = function sha1 (str) {
+function sha1 (str) {
     //  discuss at: https://locutus.io/php/sha1/
     // original by: Webtoolkit.info (https://www.webtoolkit.info/)
     // improved by: Michael White (https://getsprink.com)
