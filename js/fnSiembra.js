@@ -12,6 +12,7 @@ function limpiar_form() {
 	$('#txt_Estanque').focus();
 }
 
+
 function llenarComboEspecie() {
 	objAjax("../php/watch.php?f/s6o%n=1", '')
 	.done(function (info) {

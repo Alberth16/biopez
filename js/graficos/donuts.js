@@ -3,7 +3,6 @@ var colors = Highcharts.getOptions().colors,
     'Chrome',
     'Firefox',
     'Internet Explorer',
-
   ],
   data = [
     {

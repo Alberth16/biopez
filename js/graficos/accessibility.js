@@ -5,7 +5,6 @@
 
  (c) 2010-2019 Highsoft AS
  Author: Oystein Moseng
-
  License: www.highcharts.com/license
 */
 (function(a){"object"===typeof module&&module.exports?(a["default"]=a,module.exports=a):"function"===typeof define&&define.amd?define("highcharts/modules/accessibility",["highcharts"],function(r){a(r);a.Highcharts=r;return a}):a("undefined"!==typeof Highcharts?Highcharts:void 0)})(function(a){function r(a,g,q,n){a.hasOwnProperty(g)||(a[g]=n.apply(null,q))}a=a?a._modules:{};r(a,"modules/accessibility/utils/htmlUtilities.js",[a["parts/Utilities.js"],a["parts/Globals.js"]],function(a,g){function l(a){return a.replace(/&/g,

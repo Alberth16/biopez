@@ -13,7 +13,6 @@ urlsToCache = [
     './pgs/menu.php'
 ]
 
-
 self.addEventListener('install',e=>{
     e.waitUntil(
         caches.open(CACHE_NAME)

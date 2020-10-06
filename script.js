@@ -4,4 +4,4 @@ if('serviceWorker' in navigator){
     .catch(err=>console.log('Error al registrar el SW', err))
 }else{
     console.log('Su navegador no soporta SW');
-}
+} 

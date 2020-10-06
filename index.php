@@ -1,4 +1,4 @@
-<?php
+<?php 
     try{
         session_start();
         include "p34hc3p/conexion.php";

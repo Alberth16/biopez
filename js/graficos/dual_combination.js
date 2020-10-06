@@ -73,3 +73,4 @@ Highcharts.chart('container_dual_combination', {
       }
     }]
   });
+  

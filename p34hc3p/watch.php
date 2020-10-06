@@ -142,8 +142,6 @@
                 $rtn = $_POST['vRTN'];
                 $correo = $_POST['vcorreoCliente'];
                 $nombre = $_POST['vNombreCliente'];
-                $fechaIng = fechaC();
-                $hora = HoraLarga();
                 $telefonoCliente = $_POST['vtelefonoCliente'];
                 $direccion = $_POST['vdireccion'];
 

@@ -2,7 +2,6 @@
  Highcharts JS v8.1.2 (2020-06-16)
 
  Highcharts Drilldown module
-
  Author: Torstein Honsi
  License: www.highcharts.com/license
 

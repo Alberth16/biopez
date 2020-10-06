@@ -1,6 +1,5 @@
 <?php
     try {
-
         include "../incl/EstadoUser.php";
         // session_start();
         include_once "conexion.php";

@@ -9,7 +9,7 @@ function objetoAjax(){
             xmlhttp = false;
         }
     }
- 
+
     if (!xmlhttp && typeof XMLHttpRequest!='undefined') {
         xmlhttp = new XMLHttpRequest();
     }

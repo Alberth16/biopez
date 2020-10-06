@@ -2,7 +2,6 @@
  Highcharts JS v8.1.2 (2020-06-16)
 
  (c) 2009-2018 Torstein Honsi
-
  License: www.highcharts.com/license
 */
 (function(T,O){"object"===typeof module&&module.exports?(O["default"]=O,module.exports=T.document?O(T):O):"function"===typeof define&&define.amd?define("highcharts/highcharts",function(){return O(T)}):(T.Highcharts&&T.Highcharts.error(16,!0),T.Highcharts=O(T))})("undefined"!==typeof window?window:this,function(T){function O(g,c,R,y){g.hasOwnProperty(c)||(g[c]=y.apply(null,R))}var q={};O(q,"parts/Globals.js",[],function(){var g="undefined"!==typeof T?T:"undefined"!==typeof window?window:{},c=g.document,

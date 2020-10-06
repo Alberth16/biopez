@@ -118,8 +118,6 @@
                 $username = $_POST['vUsuario'];
                 $correo = $_POST['vCorreo'];
                 $nombre = $_POST['vNombre'];
-                $fechaIng = fechaC();
-                $hora = HoraLarga();
                 $rol = $_POST['vRol'];
                 $password = md5($_POST['vClave']);
 

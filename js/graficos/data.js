@@ -4,7 +4,6 @@
  Data module
 
  (c) 2012-2019 Torstein Honsi
-
  License: www.highcharts.com/license
 */
 (function(b){"object"===typeof module&&module.exports?(b["default"]=b,module.exports=b):"function"===typeof define&&define.amd?define("highcharts/modules/data",["highcharts"],function(v){b(v);b.Highcharts=v;return b}):b("undefined"!==typeof Highcharts?Highcharts:void 0)})(function(b){function v(b,l,v,t){b.hasOwnProperty(l)||(b[l]=t.apply(null,v))}b=b?b._modules:{};v(b,"mixins/ajax.js",[b["parts/Globals.js"],b["parts/Utilities.js"]],function(b,l){var v=l.merge,t=l.objectEach;b.ajax=function(b){var p=

@@ -3,7 +3,6 @@ Highcharts.chart('container_double_line', {
       type: 'line',
       setSize:(null)  
     },    
-    
     title: {
       text: 'Monthly Average Temperature'
     },

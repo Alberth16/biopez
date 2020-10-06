@@ -12,6 +12,6 @@
             <p id="descFinca"><?php echo $_SESSION['Activo']['Finca'];?></p>
             <p id="ID_user"><?php echo $_SESSION['Activo']['ID'];?></p>
         </div>
-        
+
     </div>
 </header>  

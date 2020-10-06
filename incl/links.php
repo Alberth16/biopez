@@ -9,5 +9,5 @@
     <script src="../js/jquery.js"></script>
     <script src="../js/funciones.js"></script>
     <script src="../js/jquery-ui.js"></script>
-    
+
     <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.png"/>
