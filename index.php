@@ -159,8 +159,9 @@
         var input_pass = document.getElementById("txt_Clave");
         function cifrar(){
             input_pass.value = sha1(input_pass.value);
-            alert(input_pass.value );
+            //alert(input_pass.value );
         }
     </script>
+    
 </body>
 </html>
