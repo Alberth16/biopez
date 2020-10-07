@@ -18,7 +18,7 @@ self.addEventListener('install',e=>{
         caches.open(CACHE_NAME)
         .then(cache =>{
             return cache.addAll(urlsToCache)
-            .then(() =>self.skipWaiting())
+            .then(()=>self.skipWaiting())
         })
         .catch(err=>console.log('Fallo registro de cache', err))
     )
