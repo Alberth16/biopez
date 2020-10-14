@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Siembra</title>
     <?php include "../incl/links.php"?>
-    <script src="../js/fn5i3bmr4.js"></script>
+    
 </head>
 <body class="cuerpo">
 
@@ -91,26 +91,6 @@
             <button id="btnGuardar" class="button"><i class="far fa-save"></i> Guardar</button>
         </div>
     </div>
-<!--     
-    <div class="container form">
-        <table class="siembra">
-            <caption>Estanques Registrados</caption>
-            <tr>
-                <th>Fecha</th>
-                <th>Estanque</th>
-                <th>Especie</th>
-                <th>Cantidad</th>
-                <th>Tamaño Inicial</th>
-            </tr>
-            <tbody class="contenidoSiembra">
-                <td>29-Sep-2020</td>
-                <td>D-5</td>
-                <td>Tilapia</td>
-                <td>6000</td>
-                <td>3.2</td>
-            </tbody>
-        </table>
-    </div> -->
 
     <script>
         window.onload=function(){

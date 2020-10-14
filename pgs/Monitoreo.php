@@ -12,7 +12,10 @@
 </head>
 <body class="cuerpo">
     
-    
+    <div class="oculto">
+        <?php include "../incl/header.php"?>
+    </div>
+
     <div class="container">
         <div class="msgbox"></div>
         <h3>Resultados de Monitoreo</h3>

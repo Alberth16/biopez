@@ -11,8 +11,7 @@
 </head>
 <body class="cuerpo">
 
-    <?php include "../incl/header.php"?>
-    
+    <?php include "../incl/header.php"?>    
     
         <h2 id="Nombre_Empresa"></h2>
         <div class="datos">

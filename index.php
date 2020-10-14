@@ -13,7 +13,7 @@
                 $datos = $sql_c->fetch(PDO::FETCH_ASSOC);
 
                 if($datos['ID']>=1){
-                    $query = "SELECT us.ID, us.Nombre, us.Correo, us.FechaRegistro, us.Rol, fn.*, ra.*
+                    $query = "SELECT us.*, fn.*, ra.*
                             FROM usuarios AS us 
                                 LEFT JOIN fincas AS fn ON fn.id_user = us.ID
                                 LEFT JOIN rangos AS ra ON us.Rol = ra.ID_ra
@@ -50,7 +50,7 @@
                 $usuario = strtolower($_POST['txt_Email']);
                 $clave = md5($_POST['txt_Clave']);
 
-                $query = "SELECT us.ID, us.Nombre, us.Correo, us.FechaRegistro, us.Rol, fn.*, ra.*
+                $query = "SELECT us.*, fn.*, ra.*
                         FROM usuarios AS us 
                             LEFT JOIN fincas AS fn ON fn.id_user = us.ID 
                             LEFT JOIN rangos AS ra ON us.Rol = ra.ID_ra
@@ -68,7 +68,7 @@
                 }else{
                     if ($data['Clave'] == $clave ) {
                         
-                        $Sesion[] = $data;
+                        $_SESSION['Activo'] = $data;
 
                         if(isset($_POST['remember'])){
                             if($_POST['remember'] == true){
@@ -84,7 +84,7 @@
                                 setcookie("MARK", $rand, time()+(60*60*24*30));
                             }
                         }
-                        json_encode($Sesion);
+
                         header('location: pgs/menu.php');
 
                     }else{
@@ -94,9 +94,74 @@
                 $CNN = null;
                 $query= null;
             }
-    } 
+        
+    }
     catch(PDOException $e){
         echo "<br>Error de Inicio: " . $e->getMessage() . "<br>" ; 
     	die();
     }
 ?>
+
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="descripcion" content="Sistema de control de cultivo para piscicultores">
+    <meta name="theme-color" content="#4da6ff">
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./img/logo.png">
+    <link rel="apple-touch-startup-image" href="./img/logo.png">
+    <link rel="manifest" href="./manifest.json">
+
+    <title>Login de usuario</title>
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/formularios.css">    
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <script src="js/icons.js"></script>
+    <script src="js/sha1.js"></script>
+</head>
+<body>
+    <div class="recuadro">
+        <div class="imgcontainer">
+            <img src="img/usuario.png" alt="Avatar" class="avatar">
+        </div>
+        <form action="<?php $_SERVER ['SCRIPT_NAME'] ?>" method="POST">
+        <div class="container" id="registros">
+            <label for="uname"><b>Usuario</b></label>
+            <input type="email" class="TxtAll" placeholder="nombre@ejemplo.com" id="txt_Email" required name="txt_Email">
+
+            <label for="psw"><b>Contraseña</b></label>
+            <input type="password" class="TxtAll" placeholder="Contraseña" id="txt_Clave" required name="txt_Clave">
+
+            <label>
+                <input type="checkbox"  name="remember" id="Chk_Recordar"> Recordarme
+            </label>
+
+            <button type="submit" onclick="cifrar();" id="btn_Aceptar" class="button"><i class="far fa-check-circle"></i>   Aceptar</button>
+        </div>
+        </form>
+        <div class="container container_login" style="background-color:#f1f1f1">
+            <span class="psw">Olviodó su <a href="pgs/menu.php" id="Restablecer_Clave">Contraseña?</a></span>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+    <script>
+        var input_pass = document.getElementById("txt_Clave");
+        function cifrar(){
+            input_pass.value = sha1(input_pass.value);
+            //alert(input_pass.value );
+        }
+    </script>
+    
+</body>
+</html>

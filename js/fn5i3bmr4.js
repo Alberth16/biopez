@@ -17,12 +17,24 @@ function llenarComboEspecie() {
 	objAjax("../p34hc3p/5i3bmr4.php?f/s6o%n=1", '')
 	.done(function (info) {
 		var datos = JSON.parse(info);
-		$('#noEspecie').append('<option value="0">Especie</option>');
+		$('#noEspecie').append('<option value="0">Seleccione</option>');
 		for(var i in datos.data) {
 			$('#noEspecie').append('<option value="'+datos.data[i].ID_Espe+'">'+datos.data[i].Especie+'</option>');
 		}
 	});
 }
+
+function Combroles() {
+	objAjax("../p34hc3p/5i3bmr4.php?f/s6o%n=2", '')
+	.done(function (info) {
+		var datos = JSON.parse(info);
+		$('#Roles').append('<option value="0">Seleccione</option>');
+		for(var i in datos.data) {
+			$('#Roles').append('<option value="'+datos.data[i].ID_ra+'">'+datos.data[i].Descripcion+'</option>');
+		}
+	});
+}
+
 
 function Registrar_Datos() {
 	var FechaSiembra = $('#datepicker').val();;
@@ -35,7 +47,16 @@ function Registrar_Datos() {
 	var finca = $('#descFinca').html();
 	var ID_user = $('#ID_user').html();
 
-	data={FechaSiembra,NoEstanque,Especie, LitroAgua, CantidadSiembra, TallaInicial, ID_Finca, ID_user, finca};
+	data={
+	'FechaSiembra':FechaSiembra,
+	'NoEstanque':NoEstanque,
+	'Especie':Especie,
+	'LitroAgua':LitroAgua,
+	'CantidadSiembra':CantidadSiembra,
+	'TallaInicial':TallaInicial,
+	'ID_Finca':ID_Finca,
+	'ID_user':ID_user,
+	'finca':finca};
 	
 	objAjax('../p34hc3p/5i3bmr4.php?f/s6o%n=2', data)
 	.done(function (info) {

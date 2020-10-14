@@ -5,10 +5,10 @@
         $funcion = intval($_GET['f/s6o%n']); 
         switch($funcion){
             case 1:
-                Combo_Especie();
+                Combos('especies');
                 break;
             case 2:
-                Buscar();
+                Combos('rangos');
                 break;
             case 3:
                 Agregar();
@@ -23,10 +23,10 @@
     }
 
     // Si
-    function Combo_Especie(){
+    function Combos($tabla){
         include "conexion.php";
         try {
-            $query = ('SELECT * FROM especies WHERE estado = 1');
+            echo $query = ('SELECT * FROM '.$tabla.' WHERE Estado = 1');
             $consulta = $CNN->prepare($query);
             $consulta->execute();
 
@@ -36,6 +36,7 @@
 
             echo jsonEncodeArray($data);
             $CNN=null;
+
         } catch (PDOException $e) {
             echo "LLenar especies " . $e->getMessage();
             die();

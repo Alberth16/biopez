@@ -1,5 +1,5 @@
 <?php
-    include "../incl/EstadoUser.php";
+    // include "../incl/EstadoUser.php";
 ?>
 
 <!DOCTYPE html>
@@ -7,73 +7,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biometrico</title>
+    <title>Registro de Usuario</title>
     <?php include "../incl/links.php"?>
 </head>
 <body class="cuerpo">
-    
+    <header>
+        <h1>Resgistro de Usuario</h1>
+    </header>
     <div class="container">
         <h3>Biometrico</h3>
         <div class="form">
         
             <div class="txts">
-                <label for=""><b>No. Muestra:</b></label>
+                <label for="txt_Nombre"><b>Nombre:</b></label>
                 <input 
                     type="text"
-                    class="Txt100"
-                    id="txt_Muestra"
-                    max="100"
-                    min="1"
-                    name="pMuestra"
-                    value="0"
+                    class=""
+                    id="txt_Nombre"
+                    name="txt_Nombre"
                     required
-                    disabled
+                    maxlength="100"
                 />
             </div>
 
             <div class="txts">
-                <label for="pMuestra"><b>% Muestra:</b></label>
+                <label for="txt_Correo"><b>Correo:</b></label>
                 <input 
-                    type="number"
-                    class="Txt100"
-                    id="txt_Muestra"
-                    max="100"
-                    min="1"
-                    placeholder="%"
-                    name="pMuestra"
-                    onkeypress="return esNumero(event, this.id);"
+                    type="email"
+                    class=""
+                    id="txt_Correo"
+                    name="txt_Correo"
                     required
-                    value="5"
-                /><span>%</span>
+                    maxlength="60"
+                />
             </div>
             
             <div class="txts">
-                <label for="Peso"><b>Peso:</b></label>
+                <label for="txt_Clave"><b>Contraseña:</b></label>
                 <input 
-                    type="text"
-                    class="Txt100 TxtNumb"
-                    id="txt_Peso"
-                    placeholder="Peso del pez" 
-                    name="Peso"
-                    onkeypress="return esNumero(event, this.id);"
+                    type="password"
+                    class=""
+                    id="txt_Clave"
+                    name="txt_Clave"
                     required
-                /><span>gm</span>
+                />
             </div>
 
             <div class="txts">
-                <label for="Tamaño"><b>Tamaño:</b></label>
+                <label for="txt_Clave2"><b>Repita Contraseña:</b></label>
                 <input 
-                    type="text"
-                    class="Txt100 TxtNumb"
-                    id="txt_Tamañoepez"
-                    placeholder="Largo del pez"
-                    name="Tamaño"
-                    onkeypress="return esNumero(event, this.id);"
+                    type="password"
+                    class=""
+                    id="txt_Clave2"
+                    name="txt_Clave2"
                     required
-                /><span>cm</span>
+                    
+                /> <span class="verificarPass"></span>
             </div>
 
-            <button id="btnGuardar" class="button"><i class="far fa-save"></i> Guardar</button>
+            <div class="txts">
+                <label for="txt_Finca"><b>Nombre de Finca:</b></label>
+                <input 
+                    type="text"
+                    class=""
+                    id="txt_Finca"
+                    name="txt_Finca"
+                    required
+                    maxlength="100"
+                />
+            </div>
+
+            <div class="txts">
+                <label for="Tamaño"><b>Rol del Usuario:</b></label>
+                <select name="Roles" id="Roles" class="select_"></select>
+            </div>
+
+            <button id="btnGuardar" class="button"> Siguiente <i class="fas fa-arrow-circle-right"></i></button>
         </div>
     </div>
 
@@ -81,6 +90,7 @@
         window.onload=function(){
             FechaActual();
             HoraActual();
+            Combroles();
         }
 
         $(document).on('click', '.cancelbtn', function() {
